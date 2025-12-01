@@ -8,7 +8,7 @@ export default function Hero() {
         </h1>
         
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Développeur React & Next.js. Au-delà du code, 
+          Développeur Full Stack. Au-delà du code, 
           j'apporte une vision business à vos projets techniques.
           Refactoring, Features ou Création complète : on construit du durable.
         </p>
