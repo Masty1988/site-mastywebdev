@@ -7,7 +7,7 @@ import Logo from "./logo";
 const navItems = [
   { name: "Services", href: "/services" },
   { name: "Projets", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "A propos", href: "/apropos"},
 ];
 
 export default function Header() {
