@@ -39,12 +39,12 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://github.com/ton-pseudo" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+              <a href="https://github.com/Masty1988" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
                 <span>💻</span> GitHub
               </a>
             </li>
             <li>
-              <a href="https://linkedin.com/in/ton-profil" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+              <a href="https://www.linkedin.com/in/nicolas-mastywebdev/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
                 <span>👔</span> LinkedIn
               </a>
             </li>
