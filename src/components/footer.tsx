@@ -34,7 +34,7 @@ export default function Footer() {
           <h3 className="font-bold text-lg mb-4 text-blue-400">Réseaux</h3>
           <ul className="space-y-2 text-sm text-slate-300">
             <li>
-              <a href="https://www.malt.fr/profile/tonprofil" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+              <a href="https://www.malt.fr/profile/nicolaslesieur1" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
                 <span>🔴</span> Malt
               </a>
             </li>
