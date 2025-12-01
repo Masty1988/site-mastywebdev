@@ -8,9 +8,9 @@ export default function Hero() {
         </h1>
         
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Développeur React & Next.js. Je ne fais pas que pisser du code, 
-          je construis des solutions durables pour votre business.
-          Refactoring, Features ou Création complète.
+          Développeur React & Next.js. Au-delà du code, 
+          j'apporte une vision business à vos projets techniques.
+          Refactoring, Features ou Création complète : on construit du durable.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
@@ -21,7 +21,7 @@ export default function Hero() {
             Voir mes réalisations
           </a>
           <a
-            href="https://github.com/ton-pseudo" // Remplace par ton vrai GitHub
+            href="https://github.com/Masty1988" // Remplace par ton vrai GitHub
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 rounded-lg bg-gray-100 text-gray-900 font-medium hover:bg-gray-200 transition-all"
