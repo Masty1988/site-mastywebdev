@@ -23,9 +23,6 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-slate-50 pt-24 px-6 pb-12">
       <div className="max-w-6xl mx-auto">
-        <div className="pt-10">       
-          <Header/>
-        </div>
         <h1 className="text-4xl font-bold text-slate-900 mb-6">Mes Réalisations</h1>
         <p className="text-lg text-gray-600 mb-12 max-w-2xl">
           Voici une sélection de projets techniques. Certains sont des POC (Preuve de concept), 
