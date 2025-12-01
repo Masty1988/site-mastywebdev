@@ -2,9 +2,9 @@ import Link from "next/link";
 import Logo from "./logo";
 
 const navItems = [
-  { name: "Services", href: "#services" },
-  { name: "Projets", href: "#projects" },
-  { name: "Contact", href: "#contact" },
+  { name: "Services", href: "/services" },
+  { name: "Projets", href: "/projects" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
