@@ -17,8 +17,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Masty Web Dev | Développeur full stack Freelance",
-  description: "Expert React, Next.js et Node.js. Création de sites web performants, refonte d'applications et développement sur mesure.",
+  // URL de base (indispensable pour les images sociales)
+  metadataBase: new URL('https://www.mastywebdev.fr'),
+
+  title: {
+    default: "Masty Web Dev | Développeur Full Stack Freelance",
+    template: "%s | Masty Web Dev", // %s sera remplacé par le titre de la page enfant
+  },
+  description: "Développeur Full Stack en Charente Maritime. Je transforme vos besoins business en sites web performants et durables.",
+  
+  // Pour les réseaux sociaux (LinkedIn, Twitter, WhatsApp)
+  openGraph: {
+    title: "Masty Web Dev | Développeur Full Stack",
+    description: "Besoin d'un site performant ? Je crée des solutions sur mesure pour votre business.",
+    url: 'https://www.mastywebdev.fr',
+    siteName: 'Masty Web Dev',
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  
+  // Pour dire aux robots qu'ils ont le droit de scanner
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

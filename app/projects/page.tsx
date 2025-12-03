@@ -1,4 +1,10 @@
 import ProjectCard from "../../src/components/projectCard"; // Assure-toi que le chemin est bon
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Portfolio & Réalisations",
+  description: "Découvrez mes projets web : API, Dashboards React et refonte de sites. Des exemples concrets de code solide.",
+};
 
 export default function ProjectsPage() {
   // Tes données (à personnaliser avec tes vrais textes ce soir)

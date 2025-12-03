@@ -2,6 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Services de Création & Refonte Web", // Deviendra : "Services... | Masty Web Dev"
+  description: "Création de sites vitrines, rénovation de sites existants et développement sur mesure. Des solutions claires pour les artisans et PME.",
+};
 
 export default function ServicesPage() {
  const [showMore, setShowMore] = useState(false)
