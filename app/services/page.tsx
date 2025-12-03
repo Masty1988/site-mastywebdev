@@ -63,17 +63,21 @@ features : ["Modification facile", "Clarté (horaires, tarifs)", "Site plus rapi
           </div>
         ))}
       </div>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        <button  onClick={() => setShowMore(!showMore)}>Plus de services ...</button>
+      <div className="flex justify-center p-8 text=blue">
+        <button  onClick={() => setShowMore(!showMore)}>
+          {showMore ? "Moins de services" : "Plus de services ... "}
+        </button>
       </div>
       {showMore && (
-        <div className="">
-          <div>{services[2].icon}</div>
-          <h3>{services[2].title}</h3>
-          <p>{services[2].description}</p>
-          <ul>
+        <div className="flex justify-center mt-8">
+        <div className="flex flex-col max-w-3xl p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:shadow-lg transition-all">
+          <div className="text-4xl mb-6">{services[2].icon}</div>
+          <h3 className="text-2xl font-bold text-slate-900 mb-4">{services[2].title}</h3>
+          <p className="text-gray-600 mb-6 flex-grow leading-relaxed">{services[2].description}</p>
+          <ul className="space-y-3 mb-8">
             {services[2].features.map((item)=>(
-              <li key={item}>{item}</li>
+              <li key={item} className="flex text-sm text-gray-700">
+                  <span className="mr-2 text-blue-500">✓</span>{item}</li>
             ))}
           </ul>
             <Link 
@@ -82,6 +86,7 @@ features : ["Modification facile", "Clarté (horaires, tarifs)", "Site plus rapi
             >
               Demander un devis
             </Link>
+          </div>
           </div>
       )}
     </div>
