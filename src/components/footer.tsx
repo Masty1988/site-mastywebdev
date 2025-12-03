@@ -13,7 +13,7 @@ export default function Footer() {
             <span className="text-xl font-bold">Masty Web Dev</span>
           </div>
           <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-            Développeur Freelance spécialisé React & Next.js.
+            Développeur Freelance Full Stack.
             Je transforme vos besoins business en solutions techniques performantes.
           </p>
         </div>
@@ -26,6 +26,7 @@ export default function Footer() {
             <li><Link href="/services" className="hover:text-white transition-colors">Services</Link></li>
             <li><Link href="/projets" className="hover:text-white transition-colors">Projets</Link></li>
             <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+            <li><Link href="/apropos" className="hover:text-white transition-colors">A Propos</Link></li>
           </ul>
         </div>
 

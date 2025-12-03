@@ -6,7 +6,6 @@ export default function Home() {
     <div className="min-h-screen bg-slate-50">
       <main>
         <Hero />
-        {/* On ajoutera la section Services ici juste après manger */}
       </main>
     </div>
   );

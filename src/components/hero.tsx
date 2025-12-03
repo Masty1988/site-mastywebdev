@@ -21,7 +21,7 @@ export default function Hero() {
             Voir mes réalisations
           </a>
           <a
-            href="https://github.com/Masty1988" // Remplace par ton vrai GitHub
+            href="https://github.com/Masty1988" 
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 rounded-lg bg-gray-100 text-gray-900 font-medium hover:bg-gray-200 transition-all"

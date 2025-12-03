@@ -1,4 +1,4 @@
-"use client"; // 👈 OBLIGATOIRE pour utiliser useState
+"use client"; 
 
 import { useState } from "react";
 import Link from "next/link";
