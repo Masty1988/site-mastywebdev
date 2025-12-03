@@ -64,7 +64,7 @@ features : ["Modification facile", "Clarté (horaires, tarifs)", "Site plus rapi
         ))}
       </div>
       <div className="flex justify-center p-8 text=blue">
-        <button  onClick={() => setShowMore(!showMore)}>
+        <button className="cursor-pointer text-blue-600 hover:scale-105 transition-all" onClick={() => setShowMore(!showMore)}>
           {showMore ? "Moins de services" : "Plus de services ... "}
         </button>
       </div>
