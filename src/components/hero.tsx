@@ -3,14 +3,13 @@ export default function Hero() {
     <section className="flex min-h-screen flex-col items-center justify-center text-center px-4 pt-20">
       <div className="space-y-6 max-w-3xl">
         <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight">
-          Je transforme vos idées <br />
-          <span className="text-blue-600">en code solide.</span>
+          Votre site web n'est plus qu'à <br />
+          <span className="text-blue-600">2 clics ! </span>
         </h1>
         
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Développeur Full Stack. Au-delà du code, 
-          j'apporte une vision business à vos projets techniques.
-          Refactoring, Features ou Création complète : on construit du durable.
+          Ensemble, construisons votre visibilité en ligne .Partagez votre savoir-faire.
+          Vos futurs clients n'attendent que ça ! 
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
@@ -21,12 +20,10 @@ export default function Hero() {
             Voir mes réalisations
           </a>
           <a
-            href="https://github.com/Masty1988" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 rounded-lg bg-gray-100 text-gray-900 font-medium hover:bg-gray-200 transition-all"
+            href="/services"
+            className="px-8 py-3 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30"
           >
-            Mon GitHub
+           Voir mes services
           </a>
         </div>
       </div>

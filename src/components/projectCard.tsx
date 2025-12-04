@@ -1,17 +1,23 @@
+"use client"  
+
+import { useState } from "react";
+
 interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
   repoLink: string;
+  images : string[];
 }
 
-export default function ProjectCard({ title, description, tags, repoLink }: ProjectCardProps) {
+export default function ProjectCard({ title, description, tags, repoLink, images }: ProjectCardProps) {
+  const [isOpen, setIsOpen] = useState (false)
+  const [currentIndex, setCurrentIndex] = useState(0)
   return (
-    <div className="group relative flex flex-col justify-between overflow-hidden rounded-xl bg-white border border-gray-200 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
+    <div onClick={()=> setIsOpen(!isOpen)} className="group relative flex flex-col justify-between overflow-hidden rounded-xl bg-white border border-gray-200 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
       {/* Zone Image (Placeholder pour l'instant) */}
       <div className="h-48 w-full bg-slate-200 flex items-center justify-center overflow-hidden">
-        <span className="text-4xl">📸</span>
-        {/* Ce soir tu remplaceras ça par une vraie balise <img src="..." /> */}
+        <img src="" alt="" />
       </div>
 
       <div className="p-6">
@@ -44,6 +50,18 @@ export default function ProjectCard({ title, description, tags, repoLink }: Proj
           Voir le code sur GitHub &rarr;
         </a>
       </div>
+      {isOpen && (
+  <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
+    {/* Bouton fermer */}
+    
+    {/* Image */}
+    <img src={images[currentIndex]} alt={title} />
+    
+    {/* Bouton précédent */}
+    
+    {/* Bouton suivant */}
+  </div>
+)}
     </div>
   );
 }
