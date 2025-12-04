@@ -33,10 +33,10 @@ features : ["Modification facile", "Clarté (horaires, tarifs)", "Site plus rapi
     <div className="min-h-screen bg-white pt-32 px-6 pb-20">
       <div className="max-w-5xl mx-auto text-center mb-16">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-6">
-          Mes Expertises
+          Votre temps est précieux !
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Je n'interviens pas seulement comme développeur, mais comme partenaire technique pour faire grandir votre activité.
+          Gardez-le pour faire ce que vous faites de mieux. Laissez-moi montrer à vos clients et prospects ce dont vous êtes capable. 
         </p>
       </div>
 
