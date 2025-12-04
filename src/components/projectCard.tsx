@@ -7,10 +7,9 @@ interface ProjectCardProps {
   description: string;
   tags: string[];
   repoLink: string;
-  images : string[];
 }
 
-export default function ProjectCard({ title, description, tags, repoLink, images }: ProjectCardProps) {
+export default function ProjectCard({ title, description, tags, repoLink,}: ProjectCardProps) {
   const [isOpen, setIsOpen] = useState (false)
   const [currentIndex, setCurrentIndex] = useState(0)
   return (
