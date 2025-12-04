@@ -17,7 +17,7 @@ export default function ProjectCard({ title, description, tags, repoLink, images
     <div onClick={()=> setIsOpen(!isOpen)} className="group relative flex flex-col justify-between overflow-hidden rounded-xl bg-white border border-gray-200 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1">
       {/* Zone Image (Placeholder pour l'instant) */}
       <div className="h-48 w-full bg-slate-200 flex items-center justify-center overflow-hidden">
-        <img src="" alt="" />
+        <img src="null" alt="Photo du side web créé" />
       </div>
 
       <div className="p-6">
@@ -50,18 +50,6 @@ export default function ProjectCard({ title, description, tags, repoLink, images
           Voir le code sur GitHub &rarr;
         </a>
       </div>
-      {isOpen && (
-  <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
-    {/* Bouton fermer */}
-    
-    {/* Image */}
-    <img src={images[currentIndex]} alt={title} />
-    
-    {/* Bouton précédent */}
-    
-    {/* Bouton suivant */}
-  </div>
-)}
     </div>
   );
 }
