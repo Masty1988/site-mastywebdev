@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
+  twitter: {
+  card: 'summary_large_image',
+  title: "Masty Web Dev | Développeur Full Stack",
+  description: "Besoin d'un site performant ?",
+},
   
   // Pour dire aux robots qu'ils ont le droit de scanner
   robots: {

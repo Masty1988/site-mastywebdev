@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Page de contact",
+  description: "Demande de devis, prise de rendez vous téléphonique, contacts"
+};
+
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4 pt-20">
