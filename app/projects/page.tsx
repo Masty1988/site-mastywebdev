@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   const myProjects = [
     {
       title: "API Restful & BDD",
-      description: "Application de gestion/reservation",
+      description: "Projet de formation. Gestion des reservations d'un port de plaisance. Fini le planning papier !",
       tags: ["Node.js", "Express", "MySQL"],
       repoLink: "https://github.com/Masty1988/port-russell-api",
       images:[
@@ -25,7 +25,7 @@ export default function ProjectsPage() {
     },
     {
       title: "Portfolio React",
-      description: "Site vitrine/ Cv en ligne",
+      description: "Projet de formation. Portfolio développeur. Être visible et décrocher des missions sans démarcher. ",
       tags: ["React", "Tailwind", "Recharts"],
       repoLink: "https://github.com/Masty1988/mon-app",
       images:[
@@ -37,7 +37,7 @@ export default function ProjectsPage() {
     },
     {
        title: "Maquette SITE WEB",
-      description: "Visualisation du site et validation avant le code",
+      description: "Projet de formation. Maquette client. Voir avant de se lancer.",
       tags: ["Figma", "Design", "Responsive"],
       repoLink: "https://github.com/ton-pseudo/dash",
       images:[
@@ -45,6 +45,7 @@ export default function ProjectsPage() {
         "/projects/figma2.png",
       ],
     },
+    
     
     // Ajoute le 3ème ici...
   ];
