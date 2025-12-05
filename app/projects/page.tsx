@@ -14,14 +14,38 @@ export default function ProjectsPage() {
       title: "API Restful & BDD",
       description: "Architecture backend complète...",
       tags: ["Node.js", "Express", "MySQL"],
-      repoLink: "https://github.com/ton-pseudo/api",
+      repoLink: "https://github.com/Masty1988/port-russell-api",
+      images:[
+        "/projects/APIrussel1.png",
+        "/projects/APIrussel2.png",
+        "/projects/APIrussel3.png",
+        "/projects/APIrussel4.png",
+
+      ],
     },
     {
-      title: "Dashboard React",
-      description: "Interface d'administration...",
+      title: "Portfolio React",
+      description: "Site vitrine/ Cv en ligne",
       tags: ["React", "Tailwind", "Recharts"],
-      repoLink: "https://github.com/ton-pseudo/dash",
+      repoLink: "https://github.com/Masty1988/mon-app",
+      images:[
+        "/projects/johndoe.png",
+        "/projects/johndoe2.png",
+        "/projects/johndoe3.png",
+        "/projects/johndoe4.png",
+      ],
     },
+    {
+       title: "Maquette SITE WEB",
+      description: "maquettage avant mise en production site web",
+      tags: ["Figma", "Design", "Responsive"],
+      repoLink: "https://github.com/ton-pseudo/dash",
+      images:[
+        "/projects/figma1.png",
+        "/projects/figma2.png",
+      ],
+    },
+    
     // Ajoute le 3ème ici...
   ];
 
@@ -34,7 +58,7 @@ export default function ProjectsPage() {
           d'autres sont en production. Ils démontrent ma capacité à gérer la stack complète.
         </p>
       </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {myProjects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
