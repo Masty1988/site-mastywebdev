@@ -22,10 +22,14 @@ export default function ServicesContent() {
 features : ["Modification facile", "Clarté (horaires, tarifs)", "Site plus rapide"],
     },
     {
-      title: "API & Backend",
+      title: "Vos outils sur-mesure", // Titre simple et parlant
       icon: "🛠️",
-      description: "Besoin d'une logique complexe ? Je conçois des API robustes et des architectures de base de données scalables pour vos applications.",
-      features: ["API Restful Node.js", "Architecture BDD (SQL/NoSQL)", "Intégration services tiers (Stripe, etc.)"]
+      description: "Vous jonglez entre des fichiers Excel, vos emails et des logiciels qui ne communiquent pas entre eux. Vous perdez un temps précieux à ressaisir les mêmes informations, avec la peur de l'erreur de stock ou de facturation. Les solutions du marché sont trop compliquées et ne collent pas à votre réalité terrain. ✅ Je crée l'outil exact qu'il vous faut. Paiement en ligne, gestion de stocks ou espace client : tout est connecté et automatisé. Vous arrêtez de faire le robot sur l'administratif pour vous concentrer sur votre métier.",
+      features: [
+        "Paiement en ligne sécurisé",
+        "Connexion de vos logiciels",
+        "Espace client privé"
+      ]
     }
   ];
   

@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   const myProjects = [
     {
       title: "API Restful & BDD",
-      description: "Architecture backend complète...",
+      description: "Application de gestion/reservation",
       tags: ["Node.js", "Express", "MySQL"],
       repoLink: "https://github.com/Masty1988/port-russell-api",
       images:[
@@ -37,7 +37,7 @@ export default function ProjectsPage() {
     },
     {
        title: "Maquette SITE WEB",
-      description: "maquettage avant mise en production site web",
+      description: "Visualisation du site et validation avant le code",
       tags: ["Figma", "Design", "Responsive"],
       repoLink: "https://github.com/ton-pseudo/dash",
       images:[
@@ -54,8 +54,8 @@ export default function ProjectsPage() {
       <div className="max-w-5xl mx-auto text-center mb-16">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-6">Mes Réalisations</h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Voici une sélection de projets techniques. Certains sont des POC (Preuve de concept), 
-          d'autres sont en production. Ils démontrent ma capacité à gérer la stack complète.
+          Découvrez mes réalisations concrètes : de la simple maquette de démonstration jusqu'au site complet et sécurisé. 
+          Chaque projet répond à un besoin précis : <span className="text-blue-600 font-medium">gagner du temps, vendre mieux ou simplifier la gestion.</span>
         </p>
       </div>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
