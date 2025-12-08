@@ -8,7 +8,7 @@ export default function Hero() {
         </h1>
         
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Ensemble, construisons votre visibilité en ligne .Partagez votre savoir-faire.
+          Ensemble, construisons votre visibilité en ligne. Partagez votre savoir-faire.
           Vos futurs clients n'attendent que ça ! 
         </p>
 

@@ -11,8 +11,8 @@ export default function ProjectsPage() {
  
   const myProjects = [
     {
-      title: "API Restful & BDD",
-      description: "Projet de formation. Gestion des reservations d'un port de plaisance. Fini le planning papier !",
+      title: "Port de plaisance Russel",
+      description: "Système de gestion/ réservation en ligne pour remplacer la gestion papier des places au port. Réalisé en formation",
       tags: ["Node.js", "Express", "MySQL"],
       repoLink: "https://github.com/Masty1988/port-russell-api",
       images:[
@@ -24,8 +24,8 @@ export default function ProjectsPage() {
       ],
     },
     {
-      title: "Portfolio React",
-      description: "Projet de formation. Portfolio développeur. Être visible et décrocher des missions sans démarcher. ",
+      title: "CV en ligne",
+      description: "Portfolio développeur interactif - Présentation de compétences et projets avec visualisation de données",
       tags: ["React", "Tailwind", "Recharts"],
       repoLink: "https://github.com/Masty1988/mon-app",
       images:[
@@ -36,13 +36,22 @@ export default function ProjectsPage() {
       ],
     },
     {
-       title: "Maquette SITE WEB",
-      description: "Projet de formation. Maquette client. Voir avant de se lancer.",
-      tags: ["Figma", "Design", "Responsive"],
-      repoLink: "https://github.com/ton-pseudo/dash",
+      title: "Touche pas au Klaxon",
+      description: "Gestion de covoiturage interne. Les employés proposent/réservent des trajets, l'admin gère les plannings et les contraintes (jours fériés, doublons, etc.).",
+      tags: ["PHP", "MVC", "MySQL"],
+      repoLink: "https://github.com/Masty1988/port-russell-api",
       images:[
-        "/projects/figma1.png",
-        "/projects/figma2.png",
+        
+      ],
+    },
+    {
+      title: "Trouve ton artisant",
+      description: "Plateforme de recherche d'artisans par ville et métier. Trouver le bon pro rapidement sans téléphoner à 15 personnes.",
+      tags: ["Node.js", "React", "API REST", "MySQL"],
+      repoLink: "https://github.com/Masty1988/port-russell-api",
+      images:[
+       
+
       ],
     },
     
@@ -59,7 +68,7 @@ export default function ProjectsPage() {
           Chaque projet répond à un besoin précis : <span className="text-blue-600 font-medium">gagner du temps, vendre mieux ou simplifier la gestion.</span>
         </p>
       </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           {myProjects.map((project, index) => (
             <ProjectCard key={index} {...project} />
           ))}
