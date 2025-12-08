@@ -18,10 +18,13 @@ export default function ContactPage() {
         </h1>
         
         <p className="text-lg text-gray-600 mb-10 leading-relaxed">
-          Vous avez une idée ? Un projet technique complexe ? Ou simplement besoin d'un audit ?
-          <br />
-          Je réponds généralement sous 24h.
-        </p>
+          Vous voulez gagner du temps, capter de nouveaux clients ou simplifier votre gestion ? 
+          Parlons de votre projet.
+          </p>
+          <p className="text-lg font-semibold text-slate-900 mb-10">
+            Je réponds sous 24h.
+          </p>
+        
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a

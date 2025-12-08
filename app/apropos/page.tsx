@@ -26,7 +26,7 @@ export default function AboutPage() {
           <div className="rounded-2xl h-64 md:h-96 w-full overflow-hidden">
             <img 
               src="/myface.jpg" 
-              alt="Nicolas Lesieur, développeur web"
+              alt="Nicolas Lesieur, développeur web, chemise blanche, lac en fond et végétation"
               className="w-full h-full object-cover"
             />
           </div>
