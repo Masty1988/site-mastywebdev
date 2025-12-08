@@ -32,7 +32,7 @@ export default function ContactPage() {
           </a>
           
           <a
-            href="https://www.malt.fr/profile/tonprofil" // Remplace par ton lien Malt
+            href="https://www.malt.fr/profile/nicolaslesieur1" // Remplace par ton lien Malt
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-8 py-4 bg-white text-slate-800 border-2 border-slate-200 font-bold rounded-xl hover:border-red-400 hover:text-red-500 transition-all flex items-center justify-center gap-2"

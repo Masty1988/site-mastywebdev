@@ -10,8 +10,8 @@ export default function ServicesContent() {
     {
       title: "Votre vitrine accessible partout !",
       icon: "✨",
-      description: `Votre activité vous prend déjà assez de temps, et votre site ne vous aide pas du tout. Vous passez vos journées à répondre aux mêmes questions : horaires, devis, rendez-vous, infos pratiques. Vous avez une idée précise de ce que vous voulez… mais personne pour la transformer en outil simple et efficace.
-✅ Avec un site bien pensé, vos clients trouvent les infos essentielles sans vous déranger. Une partie de votre travail se fait automatiquement : demandes, réservations, devis. Vous gagnez du temps, de la clarté et une image pro dès la première seconde.`,
+      description: `Votre activité vous prend déjà assez de temps, et tout repose sur vous. Sans site web, vous devez répéter les mêmes informations, présenter vos services à la main et gérer chaque demande individuellement. Et pendant que vous faites tout ça, vos futurs clients — ceux qui ne vous connaissent pas encore — cherchent en ligne… et ne vous trouvent pas.
+✅ Avec une vraie vitrine en ligne, tout devient plus simple. Vos informations sont accessibles 24h/24, votre activité est claire dès la première seconde et vous gagnez en crédibilité sans effort. Votre site prend en charge une partie des tâches répétitives et vous êtes enfin présent là où vos prochains clients vous attendent.`,
       features: ["Site vitrine", "Formulaire de contact", "Acces 24h24"]
     },
     {

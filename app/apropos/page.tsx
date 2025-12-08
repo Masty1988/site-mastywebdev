@@ -22,27 +22,26 @@ export default function AboutPage() {
         </div>
 
         {/* Section Histoire */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20">
-          <div className="bg-slate-100 rounded-2xl h-64 md:h-96 w-full flex items-center justify-center text-4xl">
-            👋
-            {/* Emplacement pour ta photo plus tard */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-star mb-20">
+          <div className="rounded-2xl h-64 md:h-96 w-full overflow-hidden">
+            <img 
+              src="/myface.jpg" 
+              alt="Nicolas Lesieur, développeur web"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
             <p>
-              <span className="font-bold text-slate-900">Salut, c'est Masty.</span>
+              <span className="font-bold text-slate-900">Je suis Nicolas Lesieur, développeur de solutions digitales pour les professionnels.</span>
             </p>
             <p>
-              Mon parcours n'est pas linéaire, et c'est ma force. Issu du monde du commerce, 
-              j'ai passé des années à écouter les besoins clients, à négocier et à trouver des solutions.
+              Avant d'écrire du code, j'ai passé 13 ans dans le commerce B2B. À écouter des clients, comprendre leurs vrais besoins (pas ceux qu'ils croient avoir), et livrer des solutions qui durent.
             </p>
             <p>
-              Aujourd'hui, j'utilise cette expérience pour coder différemment. 
-              Je ne cherche pas juste à écrire des lignes de code élégantes, je cherche à créer 
-              des outils qui <span className="font-bold text-blue-600">rapportent de la valeur</span> à votre business.
+              Aujourd'hui, je combine cette expérience commerciale avec mes compétences techniques. Résultat ? Un développeur qui comprend que votre site n'est pas un projet technique, mais un <span className="font-bold text-blue-600">outil de croissance</span> pour votre business.
             </p>
             <p>
-              Papa de 3 enfants, je connais la valeur du temps. Quand je travaille sur un projet, 
-              je vise l'efficacité et le pragmatisme. Pas de superflu, juste du solide.
+              Papa de 3 enfants, je connais la valeur du temps. Pas de superflu, juste du solide.
             </p>
           </div>
         </div>
