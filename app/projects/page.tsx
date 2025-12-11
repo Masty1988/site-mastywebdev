@@ -48,9 +48,12 @@ export default function ProjectsPage() {
       title: "Trouve ton artisant",
       description: "Plateforme de recherche d'artisans par ville et métier. Trouver le bon pro rapidement sans téléphoner à 15 personnes.",
       tags: ["Node.js", "React", "API REST", "MySQL"],
-      repoLink: "https://github.com/Masty1988/port-russell-api",
+      repoLink: "https://github.com/Masty1988/trouve-ton-artisan",
       images:[
-       
+            "/projects/Accueil-Desktop.png",
+            "/projects/List-Desktop.png",
+            "/projects/Fiche-Desktop.png",
+            "/projects/Constr-Desktop.png"
 
       ],
     },
