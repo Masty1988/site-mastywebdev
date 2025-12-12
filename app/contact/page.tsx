@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Page de contact",
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
+    <>
     <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4 pt-20">
       <div className="max-w-2xl w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 p-8 md:p-12 text-center">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 text-blue-600 text-3xl mb-8">
@@ -56,5 +58,7 @@ export default function ContactPage() {
         </div>
       </div>
     </div>
+      <RelatedLinks currentPage="contact" />
+    </>
   );
 }

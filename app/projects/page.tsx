@@ -1,5 +1,6 @@
 import ProjectCard from "../../src/components/projectCard"; // Assure-toi que le chemin est bon
 import type { Metadata } from "next";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Portfolio & Réalisations",
@@ -78,6 +79,7 @@ export default function ProjectsPage() {
             <ProjectCard key={index} {...project} />
           ))}
         </div>
+        <RelatedLinks currentPage="projects" />
     </div>
   );
 }

@@ -1,5 +1,6 @@
-import ServicesContent from "@/src/components/serviceContent";
+import ServicesContent from "@/components/serviceContent";
 import type { Metadata } from "next";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "Services de Création & Refonte Web", // Deviendra : "Services... | Masty Web Dev"
@@ -8,6 +9,9 @@ export const metadata: Metadata = {
 
 export default function ServicesPage(){
   return(
-    <ServicesContent/>
+    <>
+      <ServicesContent/>
+      <RelatedLinks currentPage="services" />
+    </>
   )
 }

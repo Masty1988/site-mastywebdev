@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
   title: "A Propos",
@@ -69,6 +70,7 @@ export default function AboutPage() {
         </div>
 
       </div>
+      <RelatedLinks currentPage="apropos" />
     </div>
   );
 }
