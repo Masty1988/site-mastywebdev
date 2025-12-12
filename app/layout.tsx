@@ -62,6 +62,40 @@ export default function RootLayout({
         <Header/>
         {children}
         <Footer/>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService", // Ou "LocalBusiness"
+              "name": "Masty Web Dev",
+              "image": "https://www.mastywebdev.fr/opengraph-image.png", // (Si tu en as une, sinon ton logo)
+              "@id": "https://www.mastywebdev.fr",
+              "url": "https://www.mastywebdev.fr",
+              "telephone": "", // Ajoute ton tel pro si tu veux qu'il apparaisse (ex: "+33 6 ...")
+              "priceRange": "$$",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "", // Mets ta rue si tu veux (pas obligé si tu bosses de chez toi)
+                "addressLocality": "Périgny",
+                "postalCode": "17180",
+                "addressCountry": "FR"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 46.1600, // Latitude approx de Périgny (centre)
+                "longitude": -1.0900
+              },
+              "areaServed": [
+                "Périgny",
+                "La Rochelle",
+                "Aytré",
+                "Charente-Maritime"
+              ],
+              "description": "Création de sites internet à Périgny et La Rochelle. Développeur Web Freelance pour artisans et PME en Charente-Maritime."
+            })
+          }}
+        />
       </body>
     </html>
   );
