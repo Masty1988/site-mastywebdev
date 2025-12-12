@@ -41,7 +41,9 @@ export default function ProjectsPage() {
       tags: ["PHP", "MVC", "MySQL"],
       repoLink: "https://github.com/Masty1988/port-russell-api",
       images:[
-        
+        "/projects/kloxon-1.png",
+        "/projects/kloxon-2.png",
+        "/projects/kloxon-3.png",
       ],
     },
     {
