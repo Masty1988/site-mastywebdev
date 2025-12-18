@@ -24,8 +24,13 @@ export const metadata: Metadata = {
   title: {
     default: "Masty Web Dev | Développeur Full Stack Freelance",
     template: "%s | Masty Web Dev", // %s sera remplacé par le titre de la page enfant
+    
   },
   description: "Développeur Full Stack en Charente Maritime. Je transforme vos besoins business en sites web performants et durables.",
+  alternates: {
+    canonical: './', // Ça générera <link rel="canonical" href="https://www.mastywebdev.fr/..." />
+  },
+  
   
   // Pour les réseaux sociaux (LinkedIn, Twitter, WhatsApp)
   openGraph: {
@@ -70,10 +75,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "ProfessionalService", // Ou "LocalBusiness"
               "name": "Masty Web Dev",
-              "image": "https://www.mastywebdev.fr/opengraph-image.png", // (Si tu en as une, sinon ton logo)
               "@id": "https://www.mastywebdev.fr",
               "url": "https://www.mastywebdev.fr",
-              "telephone": "", // Ajoute ton tel pro si tu veux qu'il apparaisse (ex: "+33 6 ...")
+              "telephone": "+33 6 03 39 90 01", // Ajoute ton tel pro si tu veux qu'il apparaisse (ex: "+33 6 ...")
               "priceRange": "$$",
               "address": {
                 "@type": "PostalAddress",
@@ -91,7 +95,10 @@ export default function RootLayout({
                 "Périgny",
                 "La Rochelle",
                 "Aytré",
-                "Charente-Maritime"
+                "Charente-Maritime",
+                "Chatellaillon",
+                "Rochefort",
+                "Surgères"
               ],
               "description": "Création de sites internet à Périgny et La Rochelle. Développeur Web Freelance pour artisans et PME en Charente-Maritime."
             })
