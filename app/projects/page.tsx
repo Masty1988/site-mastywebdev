@@ -53,11 +53,11 @@ export default function ProjectsPage() {
       tags: ["Node.js", "React", "API REST", "MySQL"],
       repoLink: "https://github.com/Masty1988/trouve-ton-artisan",
       images:[
-            "/projects/Accueil-Desktop.png",
-            "/projects/List-Desktop.png",
-            "/projects/Fiche-Desktop.png",
-            "/projects/Constr-Desktop.png"
-
+            "/projects/Home-desktop.png",
+            "/projects/Liste.png",
+            "/projects/Recherche.png",
+            "/projects/Fiche.png",
+            
       ],
     },
     
