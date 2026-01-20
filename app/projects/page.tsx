@@ -48,7 +48,7 @@ export default function ProjectsPage() {
       ],
     },
     {
-      title: "Trouve ton artisant",
+      title: "Trouve ton artisan",
       description: "Plateforme de recherche d'artisans par ville et métier. Trouver le bon pro rapidement sans téléphoner à 15 personnes.",
       tags: ["Node.js", "React", "API REST", "MySQL"],
       repoLink: "https://github.com/Masty1988/trouve-ton-artisan",
