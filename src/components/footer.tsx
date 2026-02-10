@@ -92,15 +92,15 @@ export default function Footer() {
         <div className="border-t border-slate-800 pt-8 flex flex-col items-center gap-3">
           <p className="text-slate-500 text-sm flex items-center gap-1.5">
             Développé sous le soleil par{" "}
+            <MwdParaphe size={30} />{" "}
             <a
               href="https://mastywebdev.fr"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 hover:opacity-80 transition-opacity"
+              className="font-medium text-slate-400 hover:text-slate-300 transition-colors"
             >
-              <MwdParaphe size={30} />
-            </a>{" "}
-            <span className="font-medium text-slate-400">MastyWebDev</span>
+              MastyWebDev
+            </a>
           </p>
           <p className="text-slate-600 text-xs">
             &copy; {new Date().getFullYear()} Masty Web Dev. Tous droits réservés.
