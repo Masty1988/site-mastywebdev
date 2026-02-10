@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "./logo";
+import MwdParaphe from "./MwdParaphe";
 
 export default function Footer() {
   return (
@@ -88,8 +89,20 @@ export default function Footer() {
         </div>
 
         {/* --- SÉPARATEUR & COPYRIGHT --- */}
-        <div className="border-t border-slate-800 pt-8 text-center">
-          <p className="text-slate-600 text-sm">
+        <div className="border-t border-slate-800 pt-8 flex flex-col items-center gap-3">
+          <p className="text-slate-500 text-sm flex items-center gap-1.5">
+            Développé sous le soleil par{" "}
+            <a
+              href="https://mastywebdev.fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 hover:opacity-80 transition-opacity"
+            >
+              <MwdParaphe size={30} />
+            </a>{" "}
+            <span className="font-medium text-slate-400">MastyWebDev</span>
+          </p>
+          <p className="text-slate-600 text-xs">
             &copy; {new Date().getFullYear()} Masty Web Dev. Tous droits réservés.
           </p>
         </div>
