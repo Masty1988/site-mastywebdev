@@ -90,7 +90,7 @@ export default function ProjectsPage() {
           </div>
           <LiveProjectCard
             title="ABC Boxing La Rochelle"
-            subtitle="Mon premier site déployé pour un vrai client"
+            subtitle="Mon premier site déployé pour un client"
             description="Site vitrine pour un club de boxe française et kickboxing à La Rochelle : présentation des disciplines, tarifs et inscription en ligne, fiches PDF téléchargeables, et histoire du club fondé en 2003."
             url="https://www.abcboxing.fr"
             tags={["Next.js", "Tailwind CSS"]}
