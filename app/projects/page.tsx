@@ -1,4 +1,5 @@
-import ProjectCard from "../../src/components/projectCard"; // Assure-toi que le chemin est bon
+import ProjectCard from "../../src/components/projectCard"; 
+import LiveProjectCard from "@/components/LiveProjectCard";
 import type { Metadata } from "next";
 import RelatedLinks from "@/components/RelatedLinks";
 
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  // Tes données (à personnaliser avec tes vrais textes ce soir)
+  
  
   const myProjects = [
     {
@@ -62,7 +63,6 @@ export default function ProjectsPage() {
     },
     
     
-    // Ajoute le 3ème ici...
   ];
 
   return (
@@ -79,6 +79,30 @@ export default function ProjectsPage() {
             <ProjectCard key={index} {...project} />
           ))}
         </div>
+
+        {/* --- Site en ligne : réalisation en production, distincte des exercices --- */}
+        <div className="max-w-6xl mx-auto mt-24">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-extrabold text-slate-900 mb-3">Site en ligne</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Ils me font confiance pour leur présence en ligne. Découvrez un exemple concret de site web que j'ai développé et déployé pour un client avec des fonctionnalités interactives et une interface conviviale.
+            </p>
+          </div>
+          <LiveProjectCard
+            title="ABC Boxing La Rochelle"
+            subtitle="Mon premier site déployé pour un vrai client"
+            description="Site vitrine pour un club de boxe française et kickboxing à La Rochelle : présentation des disciplines, tarifs et inscription en ligne, fiches PDF téléchargeables, et histoire du club fondé en 2003."
+            url="https://www.abcboxing.fr"
+            tags={["Next.js", "Tailwind CSS"]}
+            images={[
+              "/projects/abc1.jpg",
+              "/projects/abc2.jpg",
+              "/projects/abc3.jpg",
+              "/projects/abc4.jpg",
+            ]}
+          />
+        </div>
+
         <RelatedLinks currentPage="projects" />
     </div>
   );
