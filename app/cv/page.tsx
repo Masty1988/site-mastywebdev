@@ -71,6 +71,11 @@ const skillsCommerce = [
   "Négociation",
   "Gestion de portefeuille",
   "CRM",
+  "Prospection",
+  "Relation client",
+  "Gestion de projet",
+  "Travail en équipe",
+  "Formation et accompagnement des clients",
 ];
 
 const skillsTech = [
@@ -84,6 +89,9 @@ const skillsTech = [
   "GitHub",
   "Hébergement",
   "Déploiement",
+  "Responsive Design",
+  "Intégration de maquettes",
+  "Programmation orientée objet",
 ];
 
 export default function CvPage() {
