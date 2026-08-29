@@ -82,25 +82,25 @@ export default function RootLayout({
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "", // Mets ta rue si tu veux (pas obligé si tu bosses de chez toi)
-                "addressLocality": "Périgny",
-                "postalCode": "17180",
+                "addressLocality": "Surgères",
+                "postalCode": "17700",
                 "addressCountry": "FR"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 46.1600, // Latitude approx de Périgny (centre)
-                "longitude": -1.0900
+                "latitude": 46.1078, // Latitude approx de Surgères (centre)
+                "longitude": -0.7514
               },
               "areaServed": [
-                "Périgny",
+                "Surgères",
                 "La Rochelle",
+                "Périgny",
                 "Aytré",
                 "Charente-Maritime",
                 "Chatellaillon",
-                "Rochefort",
-                "Surgères"
+                "Rochefort"
               ],
-              "description": "Création de sites internet à Périgny et La Rochelle. Développeur Web Freelance pour artisans et PME en Charente-Maritime."
+              "description": "Création de sites internet à Surgères et La Rochelle. Développeur Web Freelance pour artisans et PME en Charente-Maritime."
             })
           }}
         />

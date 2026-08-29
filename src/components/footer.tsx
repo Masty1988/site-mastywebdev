@@ -20,7 +20,7 @@ export default function Footer() {
               Je transforme vos besoins business en solutions techniques performantes.
             </p>
             <p className="text-slate-500 text-xs border-l-2 border-slate-700 pl-3">
-              Agence Web locale basée à <span className="text-slate-300 font-medium">Périgny (17180)</span>. 
+              Agence Web locale basée à <span className="text-slate-300 font-medium">Surgères (17700)</span>.
               Intervention sur La Rochelle et en Charente-Maritime.
             </p>
           </div>
