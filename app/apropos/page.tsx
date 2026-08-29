@@ -15,7 +15,7 @@ export default function AboutPage() {
         {/* En-tête de page */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">
-            L'humain derrière le code
+            L&apos;humain derrière le code
           </h1>
           <p className="text-xl text-gray-600">
             Commercial le jour, Développeur la nuit (et le week-end).
@@ -36,10 +36,10 @@ export default function AboutPage() {
               <span className="font-bold text-slate-900">Je suis Nicolas Lesieur, développeur de solutions digitales pour les professionnels.</span>
             </p>
             <p>
-              Avant d'écrire du code, j'ai passé 13 ans dans le commerce B2B. À écouter des clients, comprendre leurs vrais besoins (pas ceux qu'ils croient avoir), et livrer des solutions qui durent.
+              Avant d&apos;écrire du code, j&apos;ai passé 13 ans dans le commerce B2B. À écouter des clients, comprendre leurs vrais besoins (pas ceux qu&apos;ils croient avoir), et livrer des solutions qui durent.
             </p>
             <p>
-              Aujourd'hui, je combine cette expérience commerciale avec mes compétences techniques. Résultat ? Un développeur qui comprend que votre site n'est pas un projet technique, mais un <span className="font-bold text-blue-600">outil de croissance</span> pour votre business.
+              Aujourd&apos;hui, je combine cette expérience commerciale avec mes compétences techniques. Résultat ? Un développeur qui comprend que votre site n&apos;est pas un projet technique, mais un <span className="font-bold text-blue-600">outil de croissance</span> pour votre business.
             </p>
             <p>
               Papa de 3 enfants, je connais la valeur du temps. Pas de superflu, juste du solide.
@@ -64,7 +64,7 @@ export default function AboutPage() {
             <div className="text-center">
               <div className="text-3xl mb-4">🎯</div>
               <h3 className="font-bold text-xl mb-2">Résultat</h3>
-              <p className="text-gray-600">Un beau site c'est bien, un site qui convertit et qui dure, c'est mieux.</p>
+              <p className="text-gray-600">Un beau site c&apos;est bien, un site qui convertit et qui dure, c&apos;est mieux.</p>
             </div>
           </div>
         </div>

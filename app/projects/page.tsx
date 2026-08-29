@@ -70,22 +70,16 @@ export default function ProjectsPage() {
       <div className="max-w-5xl mx-auto text-center mb-16">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-6">Mes Réalisations</h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Découvrez mes réalisations concrètes : de la simple maquette de démonstration jusqu'au site complet et sécurisé. 
+          Découvrez mes réalisations concrètes : de la simple maquette de démonstration jusqu&apos;au site complet et sécurisé. 
           Chaque projet répond à un besoin précis : <span className="text-blue-600 font-medium">gagner du temps, vendre mieux ou simplifier la gestion.</span>
         </p>
       </div>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {myProjects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
-          ))}
-        </div>
-
-        {/* --- Site en ligne : réalisation en production, distincte des exercices --- */}
-        <div className="max-w-6xl mx-auto mt-24">
+        {/* --- Site en ligne : réalisation en production, mise en avant avant les exercices --- */}
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-slate-900 mb-3">Site en ligne</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Ils me font confiance pour leur présence en ligne. Découvrez un exemple concret de site web que j'ai développé et déployé pour un client avec des fonctionnalités interactives et une interface conviviale.
+              Ils me font confiance pour leur présence en ligne. Découvrez un exemple concret de site web que j&apos;ai développé et déployé pour un client avec des fonctionnalités interactives et une interface conviviale.
             </p>
           </div>
           <LiveProjectCard
@@ -101,6 +95,21 @@ export default function ProjectsPage() {
               "/projects/abc4.jpg",
             ]}
           />
+        </div>
+
+        {/* --- Projets réalisés en formation --- */}
+        <div className="max-w-6xl mx-auto mt-24">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-extrabold text-slate-900 mb-3">Projets réalisés en formation</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Des applications complètes développées pendant ma formation : back-end, base de données et interfaces. Chacune répond à un besoin métier concret.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {myProjects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
         </div>
 
         <RelatedLinks currentPage="projects" />
