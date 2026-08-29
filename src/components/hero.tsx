@@ -3,13 +3,13 @@ export default function Hero() {
     <section className="flex min-h-screen flex-col items-center justify-center text-center px-4 pt-20">
       <div className="space-y-6 max-w-3xl">
         <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight">
-          Votre site web n'est plus qu'à <br />
+          Votre site web n&apos;est plus qu&apos;à <br />
           <span className="text-blue-600">2 clics ! </span>
         </h1>
         
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
           Ensemble, construisons votre visibilité en ligne. Partagez votre savoir-faire.
-          Vos futurs clients n'attendent que ça ! 
+          Vos futurs clients n&apos;attendent que ça ! 
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">

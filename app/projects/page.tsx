@@ -70,7 +70,7 @@ export default function ProjectsPage() {
       <div className="max-w-5xl mx-auto text-center mb-16">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-6">Mes Réalisations</h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Découvrez mes réalisations concrètes : de la simple maquette de démonstration jusqu'au site complet et sécurisé. 
+          Découvrez mes réalisations concrètes : de la simple maquette de démonstration jusqu&apos;au site complet et sécurisé. 
           Chaque projet répond à un besoin précis : <span className="text-blue-600 font-medium">gagner du temps, vendre mieux ou simplifier la gestion.</span>
         </p>
       </div>
@@ -79,7 +79,7 @@ export default function ProjectsPage() {
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-slate-900 mb-3">Site en ligne</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Ils me font confiance pour leur présence en ligne. Découvrez un exemple concret de site web que j'ai développé et déployé pour un client avec des fonctionnalités interactives et une interface conviviale.
+              Ils me font confiance pour leur présence en ligne. Découvrez un exemple concret de site web que j&apos;ai développé et déployé pour un client avec des fonctionnalités interactives et une interface conviviale.
             </p>
           </div>
           <LiveProjectCard
