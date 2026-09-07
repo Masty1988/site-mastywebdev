@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import RelatedLinks from "@/components/RelatedLinks";
+import DashboardPreview from "@/components/DashboardPreview";
 
 export const metadata: Metadata = {
   title: "Site & inscriptions en ligne pour clubs sportifs",
@@ -211,17 +212,12 @@ export default function AssociationsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/*
-              TODO Nicolas : remplacer par la capture ANONYMISÉE du dashboard.
-              Ne jamais publier la capture avec les vrais noms des adhérents.
-              Fichier attendu : /public/projects/dashboard-assos.png
+              Reproduction de l'interface avec des adherents fictifs.
+              Ne jamais la remplacer par une capture contenant de vrais noms,
+              de vraies photos ou de vrais statuts de paiement : passer par un
+              club de demonstration si on veut une capture ecran.
             */}
-            <div className="aspect-[4/3] rounded-2xl bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center text-center p-8">
-              <p className="text-slate-400 text-sm">
-                Capture du tableau de bord
-                <br />
-                <span className="text-xs">(à insérer, données anonymisées)</span>
-              </p>
-            </div>
+            <DashboardPreview />
 
             <div className="space-y-6">
               {/* TODO Nicolas : remplacer par la vraie citation du président, avec son accord. */}
