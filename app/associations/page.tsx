@@ -17,6 +17,11 @@ const pains = [
     text: "Des feuilles remplies à la main, des photos de documents par SMS, des dossiers déposés au bord du tatami. À la rentrée, tout arrive en même temps.",
   },
   {
+    icon: "🚪",
+    title: "On vous coupe en plein cours",
+    text: "Les parents passent au gymnase pendant l'entraînement pour poser leurs questions. Le coach s'arrête, le groupe attend, et vous répétez pour la dixième fois les horaires, les tarifs et les documents à fournir.",
+  },
+  {
     icon: "🩺",
     title: "Un dossier incomplet, c'est votre responsabilité",
     text: "Dans les disciplines à risque, le certificat médical n'est pas une formalité administrative. Vous relancez au téléphone, vous notez sur un coin de cahier, et vous laissez quand même le gamin monter sur le ring en croisant les doigts.",
@@ -166,10 +171,14 @@ export default function AssociationsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {pains.map((pain) => (
+            {pains.map((pain, index) => (
               <div
                 key={pain.title}
-                className="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100"
+                className={`flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 ${
+                  index === pains.length - 1 && pains.length % 2 === 1
+                    ? "md:col-span-2"
+                    : ""
+                }`}
               >
                 <div className="text-2xl flex-shrink-0">{pain.icon}</div>
                 <div>
