@@ -330,9 +330,9 @@ export default function AssociationsPage() {
                 Hébergement, sauvegardes et mises à jour
               </p>
               <p className="text-xl font-bold text-slate-900">
-                39 €/mois
+                390 € la saison
                 <span className="block text-sm font-normal text-gray-500">
-                  sur 10 mois — la saison sportive
+                  soit 39 €/mois — réglé en une fois, première année incluse
                 </span>
               </p>
             </div>
@@ -346,6 +346,11 @@ export default function AssociationsPage() {
               </p>
             </div>
           </div>
+
+          <p className="mt-10 text-center text-gray-600">
+            Pas d&apos;abonnement mensuel à surveiller : une facture par saison,
+            votée avec votre budget. Une fois réglée, vous n&apos;y pensez plus.
+          </p>
         </div>
       </section>
 

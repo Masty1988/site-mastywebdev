@@ -164,15 +164,14 @@ export default function ArtisansPage() {
               <p className="text-sm text-gray-500 mb-1">Page supplémentaire</p>
               <p className="text-xl font-bold text-slate-900">120 €</p>
             </div>
-            {/* TODO Nicolas : tarif mensuel artisan à confirmer (tu ne me l'as pas donné). */}
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
               <p className="text-sm text-gray-500 mb-1">
                 Hébergement et maintenance
               </p>
               <p className="text-xl font-bold text-slate-900">
-                12 €/mois
+                144 € par an
                 <span className="block text-sm font-normal text-gray-500">
-                  site à jour, sauvegardé, en ligne
+                  soit 12 €/mois — une seule facture, première année incluse
                 </span>
               </p>
             </div>
