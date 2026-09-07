@@ -219,17 +219,32 @@ export default function AssociationsPage() {
             */}
             <DashboardPreview />
 
-            <div className="space-y-6">
-              {/* TODO Nicolas : remplacer par la vraie citation du président, avec son accord. */}
-              <blockquote className="p-8 rounded-2xl bg-slate-50 border-l-4 border-blue-600">
-                <p className="text-lg text-slate-800 italic leading-relaxed mb-4">
-                  « Ça fonctionne très bien. Les gens s&apos;inscrivent
-                  directement en ligne, même ceux qui voulaient du papier. »
-                </p>
-                <footer className="text-sm text-gray-500 font-medium">
-                  Président de l&apos;ABC Boxing La Rochelle
-                </footer>
-              </blockquote>
+            {/*
+              Uniquement des faits verifiables : pas de citation tant que le
+              president n'a pas fourni la sienne et donne son accord.
+            */}
+            <div className="p-8 rounded-2xl bg-slate-50 border-l-4 border-blue-600">
+              <h3 className="text-xl font-bold text-slate-900 mb-2">
+                ABC Boxing La Rochelle
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Boxe française et kickboxing. Site vitrine, inscriptions en
+                ligne, certificats médicaux et suivi des licences. En service
+                pour la saison.
+              </p>
+
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Inscriptions ouvertes en ligne",
+                  "Dossiers reçus complets",
+                  "Règlement intérieur signé et horodaté",
+                ].map((item) => (
+                  <li key={item} className="flex items-center text-gray-700">
+                    <span className="mr-2 text-blue-600 font-bold">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
               <a
                 href="https://www.abcboxing.fr"
