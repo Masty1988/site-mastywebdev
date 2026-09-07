@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
-  title: "Site & inscriptions en ligne pour associations sportives",
+  title: "Site & inscriptions en ligne pour clubs sportifs",
   description:
-    "Site internet et plateforme d'inscription pour clubs et associations sportives en Charente-Maritime : certificat médical obligatoire, règlement signé en ligne, suivi des adhérents. À partir de 890 €.",
+    "Site internet et plateforme d'inscription pour clubs de boxe, MMA, sports de combat, plongée et associations sportives : certificat médical bloquant à l'inscription, règlement signé en ligne, suivi des adhérents. À partir de 890 €.",
 };
 
 const pains = [
@@ -16,8 +16,8 @@ const pains = [
   },
   {
     icon: "🩺",
-    title: "Il manque toujours un certificat médical",
-    text: "Et vous ne savez plus lequel. Vous relancez au téléphone, vous notez sur un coin de cahier, et vous laissez quand même le gamin s'entraîner en croisant les doigts.",
+    title: "Un dossier incomplet, c'est votre responsabilité",
+    text: "Dans les disciplines à risque, le certificat médical n'est pas une formalité administrative. Vous relancez au téléphone, vous notez sur un coin de cahier, et vous laissez quand même le gamin monter sur le ring en croisant les doigts.",
   },
   {
     icon: "✍️",
@@ -39,8 +39,8 @@ const steps = [
   },
   {
     number: "2",
-    title: "Il dépose son certificat médical",
-    text: "Et c'est obligatoire : sans le document, le formulaire ne part pas. Aucune inscription incomplète ne peut vous arriver.",
+    title: "Il dépose les documents que vous exigez",
+    text: "Certificat médical, autorisation parentale, ce que vous voulez. Tant qu'ils ne sont pas déposés, le formulaire ne part pas. Aucune inscription incomplète ne peut vous arriver.",
   },
   {
     number: "3",
@@ -57,7 +57,7 @@ const steps = [
 const included = [
   "Site vitrine du club — 4 pages",
   "Formulaire d'inscription en ligne",
-  "Certificat médical obligatoire à l'inscription",
+  "Documents obligatoires au choix du club (certificat médical, autorisation parentale…)",
   "Signature électronique du règlement intérieur",
   "Tableau de bord des adhérents et de leurs dossiers",
   "Plusieurs accès configurables (président, secrétaire, trésorier…)",
@@ -82,8 +82,9 @@ export default function AssociationsPage() {
           </h1>
 
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-4">
-            Pas de certificat médical, pas de règlement signé : le formulaire ne
-            part pas. Vous ne relancez plus personne.
+            Les documents que vous exigez sont bloquants : tant qu&apos;ils ne sont
+            pas déposés, le formulaire ne part pas. Vous ne relancez plus
+            personne.
           </p>
           <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-10">
             Le site de votre club, avec les inscriptions en ligne dedans.
@@ -91,7 +92,7 @@ export default function AssociationsPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href="/contact?type=association"
               className="px-8 py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30"
             >
               Parler de mon club
@@ -103,6 +104,32 @@ export default function AssociationsPage() {
               Voir les tarifs
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* ---------- LA NICHE : les disciplines ou le certificat est obligatoire ---------- */}
+      {/*
+        TODO Nicolas : verifie la liste exacte des "disciplines a contraintes
+        particulieres" (Code du sport) avant de mettre en ligne. Je reste
+        volontairement general ici — ne transforme pas cette section en
+        affirmation juridique sans l'avoir controlee.
+      */}
+      <section className="px-6 py-16">
+        <div className="max-w-4xl mx-auto p-10 rounded-2xl bg-blue-50 border-2 border-blue-100">
+          <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4">
+            Pensé d&apos;abord pour les disciplines à risque
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-4">
+            Boxe, MMA, sports de combat, rugby, plongée. Là où le certificat
+            médical est exigé et où un dossier incomplet engage la
+            responsabilité du club, bloquer l&apos;inscription tant que le
+            document manque n&apos;est pas un confort : c&apos;est une
+            protection. Pour vous, et pour vos adhérents.
+          </p>
+          <p className="text-gray-600">
+            Votre discipline n&apos;impose pas de certificat ? Vous choisissez
+            librement les documents que vous demandez — ou aucun.
+          </p>
         </div>
       </section>
 
@@ -348,7 +375,7 @@ export default function AssociationsPage() {
             donnerait pour votre club.
           </p>
           <Link
-            href="/contact"
+            href="/contact?type=association"
             className="inline-block px-10 py-4 rounded-xl bg-blue-600 text-white font-bold text-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30"
           >
             Parler de mon club

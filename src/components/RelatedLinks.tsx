@@ -18,11 +18,11 @@ interface RelatedLinksProps {
 const RelatedLinks: FC<RelatedLinksProps> = ({ currentPage }) => {
   const links: LinksMap = {
     artisans: [
-      { href: '/projects', label: 'Voir mes réalisations' },
+      { href: '/contact?type=artisan', label: 'Demander un devis' },
       { href: '/associations', label: 'Vous présidez une association ?' }
     ],
     associations: [
-      { href: '/projects', label: 'Voir mes réalisations' },
+      { href: '/contact?type=association', label: 'Parler de mon club' },
       { href: '/artisans', label: 'Vous êtes artisan ou commerçant ?' }
     ],
     services: [
@@ -38,8 +38,8 @@ const RelatedLinks: FC<RelatedLinksProps> = ({ currentPage }) => {
       { href: '/associations', label: 'Mon offre pour les associations' }
     ],
     contact: [
-      { href: '/services', label: 'Voir ce que je peux faire pour vous' },
-      { href: '/projects', label: 'Parcourir mes projets' }
+      { href: '/associations', label: 'Mon offre pour les clubs sportifs' },
+      { href: '/artisans', label: 'Mon offre pour les artisans' }
     ]
   };
 

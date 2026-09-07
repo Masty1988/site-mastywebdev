@@ -65,7 +65,7 @@ export default function ArtisansPage() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href="/contact?type=artisan"
               className="px-8 py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30"
             >
               Demander un devis
@@ -221,7 +221,7 @@ export default function ArtisansPage() {
             c&apos;est en ligne. Sans engagement.
           </p>
           <Link
-            href="/contact"
+            href="/contact?type=artisan"
             className="inline-block px-10 py-4 rounded-xl bg-blue-600 text-white font-bold text-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30"
           >
             Demander un devis
