@@ -12,8 +12,8 @@ const segments = [
   {
     href: "/associations",
     icon: "🏆",
-    title: "Vous présidez une association ?",
-    examples: "Club sportif, asso culturelle, comité des fêtes…",
+    title: "Vous présidez un club sportif ?",
+    examples: "Boxe, MMA, rugby, plongée, sports de combat…",
     promise: "Un site + des inscriptions en ligne, dossiers complets garantis.",
     price: "À partir de 890 €",
   },

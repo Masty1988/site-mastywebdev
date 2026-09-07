@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import RelatedLinks from "@/components/RelatedLinks";
+import StickyCta from "@/components/StickyCta";
 
 export const metadata: Metadata = {
   title: "Site internet pour artisans et commerçants",
@@ -43,9 +44,9 @@ const included = [
 
 export default function ArtisansPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pb-24 md:pb-0">
       {/* ---------- HERO ---------- */}
-      <section className="bg-slate-50 border-b border-slate-100 px-6 pt-32 pb-20">
+      <section className="bg-slate-50 border-b border-slate-100 px-6 pt-28 pb-14 md:pt-32 md:pb-20">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-8">
             Artisans, commerçants et indépendants
@@ -81,9 +82,9 @@ export default function ArtisansPage() {
       </section>
 
       {/* ---------- LE PROBLÈME ---------- */}
-      <section className="px-6 py-20">
+      <section className="px-6 py-12 md:py-20">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
               Sans site, voilà ce qui se passe
             </h2>
@@ -93,47 +94,29 @@ export default function ArtisansPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {pains.map((pain) => (
               <div
                 key={pain.title}
-                className="p-8 rounded-2xl bg-slate-50 border border-slate-100"
+                className="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100"
               >
-                <div className="text-3xl mb-4">{pain.icon}</div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
-                  {pain.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{pain.text}</p>
+                <div className="text-2xl flex-shrink-0">{pain.icon}</div>
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-1">{pain.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {pain.text}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ---------- CE QUI EST INCLUS ---------- */}
-      <section className="bg-slate-50 border-y border-slate-100 px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-10 text-center">
-            Ce que vous recevez
-          </h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {included.map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-100 text-gray-700"
-              >
-                <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       {/* ---------- TARIFS ---------- */}
-      <section id="tarifs" className="px-6 py-20 scroll-mt-24">
+      <section id="tarifs" className="px-6 py-12 md:py-20 scroll-mt-24">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
               Les tarifs, annoncés d&apos;avance
             </h2>
@@ -144,18 +127,26 @@ export default function ArtisansPage() {
           </div>
 
           <div className="max-w-2xl mx-auto mb-10">
-            <div className="flex flex-col p-8 rounded-2xl bg-white border-2 border-blue-600 shadow-lg shadow-blue-500/10 text-center">
-              <h3 className="text-xl font-bold text-slate-900 mb-2">
+            <div className="flex flex-col p-8 rounded-2xl bg-white border-2 border-blue-600 shadow-lg shadow-blue-500/10">
+              <h3 className="text-xl font-bold text-slate-900 mb-1 text-center">
                 Site vitrine
               </h3>
-              <p className="text-gray-600 mb-6">
-                4 pages, formulaire de contact, galerie de réalisations,
-                référencement local. Nom de domaine, hébergement et mail pro
-                compris la première année.
-              </p>
-              <p className="text-4xl font-extrabold text-slate-900">
+              <p className="text-4xl font-extrabold text-slate-900 mb-8 text-center">
                 890 à 1 200 €
               </p>
+              <ul className="space-y-3">
+                {included.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2.5 text-gray-700"
+                  >
+                    <span className="text-blue-600 font-bold flex-shrink-0">
+                      ✓
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
@@ -188,28 +179,8 @@ export default function ArtisansPage() {
         </div>
       </section>
 
-      {/* ---------- PREUVE ---------- */}
-      <section className="bg-slate-50 border-t border-slate-100 px-6 py-20">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
-            Du travail livré, pas des promesses
-          </h2>
-          <p className="text-lg text-gray-600 leading-relaxed mb-10">
-            Un site en ligne et en service, des applications complètes avec base
-            de données et espace d&apos;administration. Allez voir par
-            vous-même ce que je livre.
-          </p>
-          <Link
-            href="/projects"
-            className="inline-block px-8 py-4 rounded-xl bg-white text-slate-800 border-2 border-slate-200 font-bold hover:border-blue-600 hover:text-blue-700 transition-all"
-          >
-            Voir mes réalisations
-          </Link>
-        </div>
-      </section>
-
       {/* ---------- CTA FINAL ---------- */}
-      <section className="px-6 py-20">
+      <section className="px-6 py-12 md:py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
             Parlons de votre activité
@@ -229,6 +200,12 @@ export default function ArtisansPage() {
       </section>
 
       <RelatedLinks currentPage="artisans" />
+
+      <StickyCta
+        price="890 €"
+        label="Demander un devis"
+        href="/contact?type=artisan"
+      />
     </div>
   );
 }
