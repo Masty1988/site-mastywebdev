@@ -12,26 +12,34 @@ interface LinksMap {
 }
 
 interface RelatedLinksProps {
-  currentPage: 'services' | 'projects' | 'apropos' | 'contact';
+  currentPage: 'services' | 'projects' | 'apropos' | 'contact' | 'artisans' | 'associations';
 }
 
 const RelatedLinks: FC<RelatedLinksProps> = ({ currentPage }) => {
   const links: LinksMap = {
+    artisans: [
+      { href: '/contact?type=artisan', label: 'Demander un devis' },
+      { href: '/associations', label: 'Vous présidez une association ?' }
+    ],
+    associations: [
+      { href: '/contact?type=association', label: 'Parler de mon club' },
+      { href: '/artisans', label: 'Vous êtes artisan ou commerçant ?' }
+    ],
     services: [
       { href: '/projects', label: 'Voir mes réalisations' },
       { href: '/contact', label: 'Discutons de votre projet' }
     ],
     projects: [
-      { href: '/services', label: 'Découvrir mes services' },
-      { href: '/contact', label: 'Démarrer votre projet' }
+      { href: '/artisans', label: 'Mon offre pour les artisans' },
+      { href: '/associations', label: 'Mon offre pour les associations' }
     ],
     apropos: [
-      { href: '/services', label: 'Mes services' },
-      { href: '/contact', label: 'Parlons ensemble' }
+      { href: '/artisans', label: 'Mon offre pour les artisans' },
+      { href: '/associations', label: 'Mon offre pour les associations' }
     ],
     contact: [
-      { href: '/services', label: 'Voir ce que je peux faire pour vous' },
-      { href: '/projects', label: 'Parcourir mes projets' }
+      { href: '/associations', label: 'Mon offre pour les clubs sportifs' },
+      { href: '/artisans', label: 'Mon offre pour les artisans' }
     ]
   };
 
