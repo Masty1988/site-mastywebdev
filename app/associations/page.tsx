@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import RelatedLinks from "@/components/RelatedLinks";
 import DashboardPreview from "@/components/DashboardPreview";
+import StickyCta from "@/components/StickyCta";
 
 export const metadata: Metadata = {
   title: "Site & inscriptions en ligne pour clubs sportifs",
@@ -55,23 +56,40 @@ const steps = [
   },
 ];
 
-const included = [
-  "Site vitrine du club — 4 pages",
-  "Formulaire d'inscription en ligne",
-  "Documents obligatoires au choix du club (certificat médical, autorisation parentale…)",
-  "Signature électronique du règlement intérieur",
-  "Tableau de bord des adhérents et de leurs dossiers",
-  "Plusieurs accès configurables (président, secrétaire, trésorier…)",
-  "Suivi des paiements validés par l'administrateur",
-  "Gestion des événements et galerie photos",
+const vitrineFeatures = [
+  "4 pages : club, disciplines, horaires, tarifs",
+  "Formulaire de contact",
   "Nom de domaine, hébergement et adresses mail du club",
 ];
 
+const plateformeFeatures = [
+  "Formulaire d'inscription en ligne",
+  "Documents obligatoires au choix du club",
+  "Signature électronique du règlement intérieur",
+  "Tableau de bord des adhérents et de leurs dossiers",
+  "Plusieurs accès (président, secrétaire, trésorier…)",
+  "Suivi des paiements validés par l'administrateur",
+  "Gestion des événements et galerie photos",
+];
+
+function FeatureList({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-2.5 mb-8">
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-2.5 text-sm text-gray-700">
+          <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function AssociationsPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pb-24 md:pb-0">
       {/* ---------- HERO : la promesse, en une phrase ---------- */}
-      <section className="bg-slate-50 border-b border-slate-100 px-6 pt-32 pb-20">
+      <section className="bg-slate-50 border-b border-slate-100 px-6 pt-28 pb-14 md:pt-32 md:pb-20">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-8">
             Clubs et associations sportives
@@ -115,7 +133,7 @@ export default function AssociationsPage() {
         volontairement general ici — ne transforme pas cette section en
         affirmation juridique sans l'avoir controlee.
       */}
-      <section className="px-6 py-16">
+      <section className="px-6 py-10 md:py-16">
         <div className="max-w-4xl mx-auto p-10 rounded-2xl bg-blue-50 border-2 border-blue-100">
           <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-4">
             Pensé d&apos;abord pour les disciplines à risque
@@ -135,9 +153,9 @@ export default function AssociationsPage() {
       </section>
 
       {/* ---------- LE PROBLÈME : dans les mots d'un président ---------- */}
-      <section className="px-6 py-20">
+      <section className="px-6 py-12 md:py-20">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
               La rentrée d&apos;un club, c&apos;est ça
             </h2>
@@ -147,17 +165,19 @@ export default function AssociationsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {pains.map((pain) => (
               <div
                 key={pain.title}
-                className="p-8 rounded-2xl bg-slate-50 border border-slate-100"
+                className="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100"
               >
-                <div className="text-3xl mb-4">{pain.icon}</div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
-                  {pain.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{pain.text}</p>
+                <div className="text-2xl flex-shrink-0">{pain.icon}</div>
+                <div>
+                  <h3 className="font-bold text-slate-900 mb-1">{pain.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {pain.text}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -165,9 +185,9 @@ export default function AssociationsPage() {
       </section>
 
       {/* ---------- COMMENT ÇA MARCHE ---------- */}
-      <section className="bg-slate-50 border-y border-slate-100 px-6 py-20">
+      <section className="bg-slate-50 border-y border-slate-100 px-6 py-12 md:py-20">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
               Comment ça se passe, une fois en ligne
             </h2>
@@ -176,17 +196,17 @@ export default function AssociationsPage() {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {steps.map((step) => (
               <div
                 key={step.number}
-                className="flex gap-6 p-8 rounded-2xl bg-white border border-slate-100"
+                className="flex gap-4 p-6 rounded-2xl bg-white border border-slate-100"
               >
-                <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white text-xl font-bold">
+                <div className="flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-full bg-blue-600 text-white font-bold">
                   {step.number}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  <h3 className="text-lg font-bold text-slate-900 mb-1.5">
                     {step.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">{step.text}</p>
@@ -198,7 +218,7 @@ export default function AssociationsPage() {
       </section>
 
       {/* ---------- PREUVE : ABC Boxing, en production ---------- */}
-      <section className="px-6 py-20">
+      <section className="px-6 py-12 md:py-20">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
@@ -259,30 +279,10 @@ export default function AssociationsPage() {
         </div>
       </section>
 
-      {/* ---------- CE QUI EST INCLUS ---------- */}
-      <section className="bg-slate-50 border-y border-slate-100 px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-10 text-center">
-            Ce que vous recevez
-          </h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {included.map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-3 p-4 rounded-xl bg-white border border-slate-100 text-gray-700"
-              >
-                <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       {/* ---------- TARIFS ---------- */}
-      <section id="tarifs" className="px-6 py-20 scroll-mt-24">
+      <section id="tarifs" className="px-6 py-12 md:py-20 scroll-mt-24">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
               Les tarifs, sans devis à rallonge
             </h2>
@@ -293,30 +293,27 @@ export default function AssociationsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             <div className="flex flex-col p-8 rounded-2xl bg-white border-2 border-slate-200">
-              <h3 className="text-xl font-bold text-slate-900 mb-2">
+              <h3 className="text-xl font-bold text-slate-900 mb-1">
                 Site vitrine du club
               </h3>
-              <p className="text-gray-600 mb-6 flex-grow">
-                4 pages pour présenter le club, les disciplines, les horaires et
-                les tarifs. Formulaire de contact.
-              </p>
-              <p className="text-3xl font-extrabold text-slate-900">890 €</p>
+              <p className="text-3xl font-extrabold text-slate-900 mb-6">890 €</p>
+              <FeatureList items={vitrineFeatures} />
             </div>
 
             <div className="flex flex-col p-8 rounded-2xl bg-white border-2 border-blue-600 shadow-lg shadow-blue-500/10 relative">
               <span className="absolute -top-3 left-8 px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold uppercase tracking-wide">
                 Le plus demandé
               </span>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">
+              <h3 className="text-xl font-bold text-slate-900 mb-1">
                 Site + inscriptions en ligne
               </h3>
-              <p className="text-gray-600 mb-6 flex-grow">
-                Tout le site vitrine, plus la plateforme complète : inscriptions,
-                certificats médicaux, règlement signé, tableau de bord.
-              </p>
-              <p className="text-3xl font-extrabold text-slate-900">
+              <p className="text-3xl font-extrabold text-slate-900 mb-2">
                 à partir de 1490 €
               </p>
+              <p className="text-sm font-semibold text-blue-700 mb-4">
+                Tout le site vitrine, plus :
+              </p>
+              <FeatureList items={plateformeFeatures} />
             </div>
           </div>
 
@@ -361,7 +358,7 @@ export default function AssociationsPage() {
         (contrat de sous-traitance RGPD signé avec le club).
         Un certificat médical est une donnée de santé : promesse tenue ou rien.
       */}
-      <section className="bg-slate-900 text-white px-6 py-20">
+      <section className="bg-slate-900 text-white px-6 py-12 md:py-20">
         <div className="max-w-3xl mx-auto text-center">
           <div className="text-4xl mb-6">🔒</div>
           <h2 className="text-3xl font-extrabold mb-6">
@@ -380,7 +377,7 @@ export default function AssociationsPage() {
       </section>
 
       {/* ---------- CTA FINAL ---------- */}
-      <section className="px-6 py-20">
+      <section className="px-6 py-12 md:py-20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
             Votre rentrée arrive vite
@@ -400,6 +397,12 @@ export default function AssociationsPage() {
       </section>
 
       <RelatedLinks currentPage="associations" />
+
+      <StickyCta
+        price="890 €"
+        label="Parler de mon club"
+        href="/contact?type=association"
+      />
     </div>
   );
 }
