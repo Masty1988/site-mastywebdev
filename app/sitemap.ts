@@ -7,6 +7,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: 'https://mastywebdev.fr/artisans',
+      lastModified: new Date(),
+    },
+    {
+      url: 'https://mastywebdev.fr/associations',
+      lastModified: new Date(),
+    },
+    {
       url: 'https://mastywebdev.fr/services',
       lastModified: new Date(),
     },

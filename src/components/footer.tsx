@@ -36,6 +36,8 @@ export default function Footer() {
                 </h3>
                 <ul className="flex flex-wrap justify-center gap-6 text-sm font-medium text-slate-300">
                     <li><Link href="/" className="hover:text-white hover:underline decoration-blue-500 underline-offset-4 transition-all">Accueil</Link></li>
+                    <li><Link href="/artisans" className="hover:text-white hover:underline decoration-blue-500 underline-offset-4 transition-all">Artisans</Link></li>
+                    <li><Link href="/associations" className="hover:text-white hover:underline decoration-blue-500 underline-offset-4 transition-all">Associations</Link></li>
                     <li><Link href="/services" className="hover:text-white hover:underline decoration-blue-500 underline-offset-4 transition-all">Services</Link></li>
                     <li><Link href="/projects" className="hover:text-white hover:underline decoration-blue-500 underline-offset-4 transition-all">Projets</Link></li>
                     <li><Link href="/apropos" className="hover:text-white hover:underline decoration-blue-500 underline-offset-4 transition-all">A Propos</Link></li>
