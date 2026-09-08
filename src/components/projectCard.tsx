@@ -2,6 +2,7 @@
 "use client"; // 👈 OBLIGATOIRE : On a besoin d'interactivité
 
 import { useState } from "react";
+import { ImageOff } from "lucide-react";
 import Image from "next/image";
 
 interface ProjectCardProps {
@@ -58,7 +59,9 @@ export default function ProjectCard({ title, description, tags, repoLink, images
                className="object-cover transition-transform duration-500 group-hover:scale-105"
              />
            ) : (
-             <div className="flex items-center justify-center h-full text-4xl">📸</div>
+             <div className="flex items-center justify-center h-full">
+               <ImageOff className="w-10 h-10 text-slate-300" strokeWidth={1.5} aria-hidden="true" />
+             </div>
            )}
            
            {/* Petit badge pour dire qu'il y a plusieurs photos */}
