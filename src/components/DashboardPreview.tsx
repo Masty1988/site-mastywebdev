@@ -6,6 +6,16 @@
  * et la mention "donnees fictives" est visible a l'ecran.
  */
 
+import {
+  Check,
+  Clock,
+  CreditCard,
+  LogOut,
+  Paperclip,
+  Plus,
+  Shield,
+} from "lucide-react";
+
 type Row = {
   initials: string;
   name: string;
@@ -28,13 +38,13 @@ function StatusBadge({ status }: { status: Row["status"] }) {
   if (status === "paye") {
     return (
       <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-green-50 px-3 py-1.5 text-xs font-semibold text-green-700">
-        <span aria-hidden="true">✓</span> Payé
+        <Check className="h-3.5 w-3.5" strokeWidth={2.5} aria-hidden="true" /> Payé
       </span>
     );
   }
   return (
     <span className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-amber-50 px-3 py-1.5 text-xs font-semibold text-amber-700">
-      <span aria-hidden="true">⏳</span> En attente
+      <Clock className="h-3.5 w-3.5" strokeWidth={2.5} aria-hidden="true" /> En attente
     </span>
   );
 }
@@ -46,8 +56,8 @@ export default function DashboardPreview() {
         {/* --- Barre superieure --- */}
         <div className="flex items-center justify-between gap-4 border-b border-slate-100 px-5 py-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-slate-900 text-lg text-white">
-              🥊
+            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-slate-900 text-white">
+              <Shield className="h-5 w-5" strokeWidth={2} aria-hidden="true" />
             </div>
             <div>
               <p className="text-base font-bold leading-tight text-slate-900">
@@ -58,9 +68,7 @@ export default function DashboardPreview() {
               </p>
             </div>
           </div>
-          <span aria-hidden="true" className="text-xl text-slate-400">
-            ⏻
-          </span>
+          <LogOut className="h-5 w-5 text-slate-400" strokeWidth={2} aria-hidden="true" />
         </div>
 
         {/* --- Filtres --- */}
@@ -85,9 +93,9 @@ export default function DashboardPreview() {
             </div>
             <span
               aria-hidden="true"
-              className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-red-500 text-lg font-bold text-white"
+              className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-xl bg-red-500 text-white"
             >
-              +
+              <Plus className="h-5 w-5" strokeWidth={2.5} />
             </span>
           </div>
         </div>
@@ -114,8 +122,9 @@ export default function DashboardPreview() {
                   <p className="truncate text-xs text-slate-500">
                     {row.category}
                   </p>
-                  <p className="mt-0.5 text-xs text-slate-400">
-                    <span aria-hidden="true">📎</span> {row.documents} documents
+                  <p className="mt-0.5 flex items-center gap-1 text-xs text-slate-400">
+                    <Paperclip className="h-3 w-3" aria-hidden="true" />
+                    {row.documents} documents
                   </p>
                 </div>
               </div>
@@ -124,9 +133,9 @@ export default function DashboardPreview() {
               </div>
               <span
                 aria-hidden="true"
-                className="hidden h-8 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-green-500 text-sm text-white sm:flex"
+                className="hidden h-8 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-green-500 text-white sm:flex"
               >
-                💳
+                <CreditCard className="h-4 w-4" strokeWidth={2} />
               </span>
             </li>
           ))}

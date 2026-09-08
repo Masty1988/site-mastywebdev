@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import RelatedLinks from "@/components/RelatedLinks";
 import StickyCta from "@/components/StickyCta";
+import { Camera, Check, PhoneCall, Search, ThumbsUp } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Site internet pour artisans et commerçants",
@@ -11,22 +12,22 @@ export const metadata: Metadata = {
 
 const pains = [
   {
-    icon: "🔍",
+    Icon: Search,
     title: "On vous cherche sur Google, on trouve votre concurrent",
     text: "Quelqu'un tape votre métier et votre ville. Trois noms sortent. Le vôtre n'y est pas, parce que vous n'avez rien à indexer.",
   },
   {
-    icon: "📞",
+    Icon: PhoneCall,
     title: "Vous répétez les mêmes réponses dix fois par semaine",
     text: "Vos horaires, votre zone d'intervention, ce que vous faites et ce que vous ne faites pas. À chaque appel, depuis le chantier.",
   },
   {
-    icon: "📷",
+    Icon: Camera,
     title: "Vous n'avez rien à montrer",
     text: "On vous demande des exemples de votre travail. Vous cherchez dans la pellicule de votre téléphone et vous envoyez trois photos par SMS.",
   },
   {
-    icon: "👍",
+    Icon: ThumbsUp,
     title: "Une page Facebook n'est pas un site",
     text: "Elle ne sort quasiment pas dans les recherches, elle ne vous appartient pas, et elle noie vos infos pratiques dans un fil d'actualité.",
   },
@@ -100,7 +101,11 @@ export default function ArtisansPage() {
                 key={pain.title}
                 className="flex gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100"
               >
-                <div className="text-2xl flex-shrink-0">{pain.icon}</div>
+                <pain.Icon
+                  className="h-6 w-6 flex-shrink-0 text-blue-600"
+                  strokeWidth={1.75}
+                  aria-hidden="true"
+                />
                 <div>
                   <h3 className="font-bold text-slate-900 mb-1">{pain.title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -140,9 +145,11 @@ export default function ArtisansPage() {
                     key={item}
                     className="flex items-start gap-2.5 text-gray-700"
                   >
-                    <span className="text-blue-600 font-bold flex-shrink-0">
-                      ✓
-                    </span>
+                    <Check
+                      className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600"
+                      strokeWidth={2.5}
+                      aria-hidden="true"
+                    />
                     {item}
                   </li>
                 ))}

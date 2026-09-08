@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { MessagesSquare, Target, Zap } from "lucide-react";
 import RelatedLinks from "@/components/RelatedLinks";
 
 export const metadata: Metadata = {
@@ -52,17 +53,17 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Pourquoi travailler avec moi ?</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-3xl mb-4">🗣️</div>
+              <MessagesSquare className="w-8 h-8 mb-4 text-blue-600" strokeWidth={1.75} aria-hidden="true" />
               <h3 className="font-bold text-xl mb-2">Je parle votre langue</h3>
               <p className="text-gray-600">Pas de jargon technique inutile. On parle objectifs, KPI et délais.</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl mb-4">⚡</div>
+              <Zap className="w-8 h-8 mb-4 text-blue-600" strokeWidth={1.75} aria-hidden="true" />
               <h3 className="font-bold text-xl mb-2">Réactivité</h3>
               <p className="text-gray-600">Habitué à la relation client, je ne vous laisse pas sans réponse pendant 3 jours.</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl mb-4">🎯</div>
+              <Target className="w-8 h-8 mb-4 text-blue-600" strokeWidth={1.75} aria-hidden="true" />
               <h3 className="font-bold text-xl mb-2">Résultat</h3>
               <p className="text-gray-600">Un beau site c&apos;est bien, un site qui convertit et qui dure, c&apos;est mieux.</p>
             </div>

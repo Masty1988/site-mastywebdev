@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { Hammer, Trophy } from "lucide-react";
 
 const segments = [
   {
     href: "/artisans",
-    icon: "🔧",
+    Icon: Hammer,
     title: "Vous êtes artisan ou commerçant ?",
     examples: "Menuisier, plombier, coiffeur, kiné, indépendant…",
     promise: "Un site vitrine qui vous rend visible sur Google.",
@@ -11,7 +12,7 @@ const segments = [
   },
   {
     href: "/associations",
-    icon: "🏆",
+    Icon: Trophy,
     title: "Vous présidez un club sportif ?",
     examples: "Boxe, MMA, rugby, plongée, sports de combat…",
     promise: "Un site + des inscriptions en ligne, dossiers complets garantis.",
@@ -45,7 +46,11 @@ export default function Hero() {
               href={segment.href}
               className="group flex flex-col p-8 rounded-2xl bg-white border-2 border-slate-200 hover:border-blue-600 hover:shadow-xl hover:shadow-blue-500/10 transition-all"
             >
-              <div className="text-4xl mb-4">{segment.icon}</div>
+              <segment.Icon
+                className="w-9 h-9 mb-4 text-blue-600"
+                strokeWidth={1.75}
+                aria-hidden="true"
+              />
               <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">
                 {segment.title}
               </h2>

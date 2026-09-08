@@ -3,6 +3,15 @@ import type { Metadata } from "next";
 import RelatedLinks from "@/components/RelatedLinks";
 import DashboardPreview from "@/components/DashboardPreview";
 import StickyCta from "@/components/StickyCta";
+import {
+  Banknote,
+  Check,
+  ClipboardList,
+  DoorOpen,
+  PenLine,
+  ShieldCheck,
+  Stethoscope,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Site & inscriptions en ligne pour clubs sportifs",
@@ -12,27 +21,27 @@ export const metadata: Metadata = {
 
 const pains = [
   {
-    icon: "📋",
+    Icon: ClipboardList,
     title: "Les inscriptions arrivent en vrac",
     text: "Des feuilles remplies à la main, des photos de documents par SMS, des dossiers déposés au bord du tatami. À la rentrée, tout arrive en même temps.",
   },
   {
-    icon: "🚪",
+    Icon: DoorOpen,
     title: "On vous coupe en plein cours",
     text: "Les parents passent au gymnase pendant l'entraînement pour poser leurs questions. Le coach s'arrête, le groupe attend, et vous répétez pour la dixième fois les horaires, les tarifs et les documents à fournir.",
   },
   {
-    icon: "🩺",
+    Icon: Stethoscope,
     title: "Un dossier incomplet, c'est votre responsabilité",
     text: "Dans les disciplines à risque, le certificat médical n'est pas une formalité administrative. Vous relancez au téléphone, vous notez sur un coin de cahier, et vous laissez quand même le gamin monter sur le ring en croisant les doigts.",
   },
   {
-    icon: "✍️",
+    Icon: PenLine,
     title: "Le règlement intérieur, personne ne le signe",
     text: "Vous l'imprimez, vous le distribuez, il revient une fois sur trois. En cas de problème, vous n'avez rien à montrer.",
   },
   {
-    icon: "💶",
+    Icon: Banknote,
     title: "Qui a payé, qui n'a pas payé",
     text: "Des chèques dans une enveloppe, des espèces, des virements. Le suivi tient dans votre tête et dans un cahier.",
   },
@@ -82,7 +91,11 @@ function FeatureList({ items }: { items: string[] }) {
     <ul className="space-y-2.5 mb-8">
       {items.map((item) => (
         <li key={item} className="flex items-start gap-2.5 text-sm text-gray-700">
-          <span className="text-blue-600 font-bold flex-shrink-0">✓</span>
+          <Check
+            className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600"
+            strokeWidth={2.5}
+            aria-hidden="true"
+          />
           {item}
         </li>
       ))}
@@ -180,7 +193,11 @@ export default function AssociationsPage() {
                     : ""
                 }`}
               >
-                <div className="text-2xl flex-shrink-0">{pain.icon}</div>
+                <pain.Icon
+                  className="h-6 w-6 flex-shrink-0 text-blue-600"
+                  strokeWidth={1.75}
+                  aria-hidden="true"
+                />
                 <div>
                   <h3 className="font-bold text-slate-900 mb-1">{pain.title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -268,8 +285,12 @@ export default function AssociationsPage() {
                   "Dossiers reçus complets",
                   "Règlement intérieur signé et horodaté",
                 ].map((item) => (
-                  <li key={item} className="flex items-center text-gray-700">
-                    <span className="mr-2 text-blue-600 font-bold">✓</span>
+                  <li key={item} className="flex items-center gap-2 text-gray-700">
+                    <Check
+                      className="h-4 w-4 flex-shrink-0 text-blue-600"
+                      strokeWidth={2.5}
+                      aria-hidden="true"
+                    />
                     {item}
                   </li>
                 ))}
@@ -369,7 +390,11 @@ export default function AssociationsPage() {
       */}
       <section className="bg-slate-900 text-white px-6 py-12 md:py-20">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="text-4xl mb-6">🔒</div>
+          <ShieldCheck
+            className="mx-auto mb-6 h-12 w-12 text-blue-400"
+            strokeWidth={1.5}
+            aria-hidden="true"
+          />
           <h2 className="text-3xl font-extrabold mb-6">
             Les documents de vos adhérents sont des données sensibles
           </h2>

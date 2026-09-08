@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import RelatedLinks from "@/components/RelatedLinks";
 import ContactForm from "@/components/ContactForm";
 import { isSegment, type Segment } from "@/lib/contactForm";
+import { Mail, MailOpen, Phone, SquareArrowOutUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Page de contact",
@@ -24,8 +25,8 @@ export default async function ContactPage({
       <div className="min-h-screen bg-slate-50 px-4 pt-32 pb-20">
         <div className="mx-auto max-w-2xl">
           <div className="mb-10 text-center">
-            <div className="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-3xl text-blue-600">
-              📬
+            <div className="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+              <MailOpen className="h-8 w-8" strokeWidth={1.75} aria-hidden="true" />
             </div>
             <h1 className="mb-6 text-3xl font-bold text-slate-900 md:text-4xl">
               Parlons de votre projet
@@ -51,13 +52,13 @@ export default async function ContactPage({
                 href="tel:+33603399001"
                 className="flex items-center justify-center gap-2 rounded-xl border-2 border-slate-200 bg-white px-6 py-3 font-semibold text-slate-800 transition-all hover:border-blue-600 hover:text-blue-700"
               >
-                <span>📞</span> 06 03 39 90 01
+                <Phone className="h-5 w-5" strokeWidth={2} aria-hidden="true" /> 06 03 39 90 01
               </a>
               <a
                 href="mailto:contact@mastywebdev.fr"
                 className="flex items-center justify-center gap-2 rounded-xl border-2 border-slate-200 bg-white px-6 py-3 font-semibold text-slate-800 transition-all hover:border-blue-600 hover:text-blue-700"
               >
-                <span>✉️</span> Par email
+                <Mail className="h-5 w-5" strokeWidth={2} aria-hidden="true" /> Par email
               </a>
               <a
                 href="https://www.malt.fr/profile/nicolaslesieur1"
@@ -65,7 +66,7 @@ export default async function ContactPage({
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-xl border-2 border-slate-200 bg-white px-6 py-3 font-semibold text-slate-800 transition-all hover:border-red-400 hover:text-red-500"
               >
-                <span>🔴</span> Profil Malt
+                <SquareArrowOutUpRight className="h-5 w-5" strokeWidth={2} aria-hidden="true" /> Profil Malt
               </a>
             </div>
 

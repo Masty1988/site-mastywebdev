@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useEffect, useRef, useState } from "react";
+import { CircleCheck } from "lucide-react";
 import { sendContact } from "../../app/contact/actions";
 import {
   ADHERENTS_OPTIONS,
@@ -134,7 +135,11 @@ export default function ContactForm({
   if (state.status === "success") {
     return (
       <div className="rounded-2xl border-2 border-green-200 bg-green-50 p-10 text-center">
-        <div className="mb-6 text-5xl">✅</div>
+        <CircleCheck
+          className="mx-auto mb-6 h-14 w-14 text-green-600"
+          strokeWidth={1.5}
+          aria-hidden="true"
+        />
         <h2 className="mb-4 text-2xl font-bold text-slate-900">
           C&apos;est envoyé, merci.
         </h2>

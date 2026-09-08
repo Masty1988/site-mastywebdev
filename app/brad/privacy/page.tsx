@@ -9,7 +9,7 @@ export default function BradPrivacy() {
           Brad est une application d&apos;aide à la détection d&apos;arnaques par SMS.
         </p>
   
-        <h2 className="text-xl font-semibold mt-8 mb-4">📱 Données collectées</h2>
+        <h2 className="text-xl font-semibold mt-8 mb-4">Données collectées</h2>
         <p className="mb-4">
           Brad n&apos;envoie <strong>AUCUNE donnée sur internet</strong>. Toute l&apos;analyse est effectuée 
           localement sur votre téléphone.
@@ -21,7 +21,7 @@ export default function BradPrivacy() {
           <li>Aucune publicité, donc aucun tracking</li>
         </ul>
   
-        <h2 className="text-xl font-semibold mt-8 mb-4">📊 Données stockées localement</h2>
+        <h2 className="text-xl font-semibold mt-8 mb-4">Données stockées localement</h2>
         <p className="mb-4">Brad stocke uniquement sur votre téléphone :</p>
         <ul className="list-disc pl-6 mb-6 space-y-2">
           <li>Vos statistiques de quiz (série, score)</li>
@@ -32,7 +32,7 @@ export default function BradPrivacy() {
           en désinstallant l&apos;application.
         </p>
   
-        <h2 className="text-xl font-semibold mt-8 mb-4">🔗 Connexions externes</h2>
+        <h2 className="text-xl font-semibold mt-8 mb-4">Connexions externes</h2>
         <p className="mb-4">Brad se connecte uniquement à GitHub pour récupérer :</p>
         <ul className="list-disc pl-6 mb-6 space-y-2">
           <li>Les questions du quiz</li>
@@ -42,7 +42,7 @@ export default function BradPrivacy() {
           Aucune donnée personnelle n&apos;est transmise lors de ces connexions.
         </p>
   
-        <h2 className="text-xl font-semibold mt-8 mb-4">📧 Contact</h2>
+        <h2 className="text-xl font-semibold mt-8 mb-4">Contact</h2>
         <p className="mb-2">
           Pour toute question : <a href="mailto:contact@mastywebdev.fr" className="text-blue-600 underline">contact@mastywebdev.fr</a>
         </p>
