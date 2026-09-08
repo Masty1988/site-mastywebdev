@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "../src/components/header";
-import Footer from "../src/components/footer";
+import SiteChrome from "../src/components/SiteChrome";
 import { Analytics } from "@vercel/analytics/next"
-import ScrollToTop from '@/components/ScrollToTop';
 
 
 const geistSans = Geist({
@@ -65,9 +63,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Analytics/>
-        <Header/>
-        {children}
-        <Footer/>
+        <SiteChrome>{children}</SiteChrome>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -104,7 +100,6 @@ export default function RootLayout({
             })
           }}
         />
-        <ScrollToTop />
       </body>
     </html>
   );
