@@ -15,6 +15,40 @@ import {
 const inputClass =
   "w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder:text-slate-400 focus:border-blue-600 focus:outline-none transition-colors";
 
+/**
+ * React reinitialise un formulaire non controle des que la Server Action rend
+ * la main. Sur une erreur de validation, tout ce que le visiteur a tape est
+ * donc efface. On pilote chaque champ depuis cet etat pour que la saisie
+ * survive a un aller-retour serveur.
+ */
+type Values = {
+  structure: string;
+  discipline: string;
+  adherents: string;
+  gestion: string;
+  metier: string;
+  zone: string;
+  siteActuel: string;
+  nom: string;
+  telephone: string;
+  email: string;
+  message: string;
+};
+
+const EMPTY: Values = {
+  structure: "",
+  discipline: "",
+  adherents: "",
+  gestion: "",
+  metier: "",
+  zone: "",
+  siteActuel: "",
+  nom: "",
+  telephone: "",
+  email: "",
+  message: "",
+};
+
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
   return (
@@ -52,18 +86,49 @@ export default function ContactForm({
   defaultSegment?: Segment;
 }) {
   const [segment, setSegment] = useState<Segment>(defaultSegment);
+  const [values, setValues] = useState<Values>(EMPTY);
+  const [consent, setConsent] = useState(false);
   const [state, formAction, pending] = useActionState(
     sendContact,
     INITIAL_STATE,
   );
-  const errorRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const errors = state.fieldErrors ?? {};
 
-  // On amene l'utilisateur sur le message plutot que de le laisser chercher.
+  const set =
+    (field: keyof Values) =>
+    (
+      e: React.ChangeEvent<
+        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      >,
+    ) =>
+      setValues((v) => ({ ...v, [field]: e.target.value }));
+
+  // React remet le formulaire a zero quand la Server Action rend la main. Les
+  // champs texte sont resynchronises depuis l'etat au rendu suivant, mais pas
+  // les <select> : leur valeur cote React n'a pas bouge, donc React n'ecrit
+  // rien dans le DOM et le menu retombe sur sa premiere option. On les remet
+  // nous-memes apres chaque reponse du serveur.
   useEffect(() => {
-    if (state.status === "error") {
-      errorRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    const form = formRef.current;
+    if (!form) return;
+    for (const name of ["adherents", "gestion", "siteActuel"] as const) {
+      const field = form.elements.namedItem(name);
+      if (field instanceof HTMLSelectElement) field.value = values[name];
     }
+    // Meme probleme pour la case a cocher : le reset la decoche sans que React
+    // s'en apercoive, et la demande suivante repartirait sans consentement.
+    const box = form.elements.namedItem("consentement");
+    if (box instanceof HTMLInputElement) box.checked = consent;
+  }, [state, values, consent]);
+
+  // On amene le visiteur sur le premier champ fautif, pas sur le bas du formulaire.
+  useEffect(() => {
+    if (state.status !== "error") return;
+    const target =
+      formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]') ??
+      formRef.current?.querySelector<HTMLElement>('[role="alert"]');
+    target?.scrollIntoView({ behavior: "smooth", block: "center" });
   }, [state]);
 
   if (state.status === "success") {
@@ -89,7 +154,12 @@ export default function ContactForm({
   }
 
   return (
-    <form action={formAction} className="space-y-8 text-left" noValidate>
+    <form
+      ref={formRef}
+      action={formAction}
+      className="space-y-8 text-left"
+      noValidate
+    >
       {/* Piege a robots : invisible et hors du parcours clavier. */}
       <div className="absolute left-[-9999px]" aria-hidden="true">
         <label htmlFor="website">Ne remplissez pas ce champ</label>
@@ -135,7 +205,9 @@ export default function ContactForm({
               name="structure"
               type="text"
               className={inputClass}
-              placeholder="ABC Boxing La Rochelle"
+              placeholder="Le nom de votre club"
+              value={values.structure}
+              onChange={set("structure")}
               aria-invalid={Boolean(errors.structure)}
             />
             <FieldError message={errors.structure} />
@@ -151,6 +223,8 @@ export default function ContactForm({
               type="text"
               className={inputClass}
               placeholder="Boxe, MMA, rugby, plongée…"
+              value={values.discipline}
+              onChange={set("discipline")}
             />
           </div>
 
@@ -159,7 +233,13 @@ export default function ContactForm({
               <Label htmlFor="adherents" optional>
                 Nombre d&apos;adhérents
               </Label>
-              <select id="adherents" name="adherents" className={inputClass} defaultValue="">
+              <select
+                id="adherents"
+                name="adherents"
+                className={inputClass}
+                value={values.adherents}
+                onChange={set("adherents")}
+              >
                 <option value="">Je ne sais pas encore</option>
                 {ADHERENTS_OPTIONS.map((option) => (
                   <option key={option} value={option}>
@@ -172,7 +252,13 @@ export default function ContactForm({
               <Label htmlFor="gestion" optional>
                 Vos inscriptions aujourd&apos;hui
               </Label>
-              <select id="gestion" name="gestion" className={inputClass} defaultValue="">
+              <select
+                id="gestion"
+                name="gestion"
+                className={inputClass}
+                value={values.gestion}
+                onChange={set("gestion")}
+              >
                 <option value="">Je préfère en parler</option>
                 {GESTION_OPTIONS.map((option) => (
                   <option key={option} value={option}>
@@ -196,6 +282,8 @@ export default function ContactForm({
               type="text"
               className={inputClass}
               placeholder="Menuisier, plombier, coiffeur…"
+              value={values.metier}
+              onChange={set("metier")}
               aria-invalid={Boolean(errors.metier)}
             />
             <FieldError message={errors.metier} />
@@ -211,14 +299,22 @@ export default function ContactForm({
                 name="zone"
                 type="text"
                 className={inputClass}
-                placeholder="Surgères et 30 km autour"
+                placeholder="Votre ville et les alentours"
+                value={values.zone}
+                onChange={set("zone")}
               />
             </div>
             <div>
               <Label htmlFor="siteActuel" optional>
                 Vous avez déjà un site ?
               </Label>
-              <select id="siteActuel" name="siteActuel" className={inputClass} defaultValue="">
+              <select
+                id="siteActuel"
+                name="siteActuel"
+                className={inputClass}
+                value={values.siteActuel}
+                onChange={set("siteActuel")}
+              >
                 <option value="">Je préfère en parler</option>
                 {SITE_ACTUEL_OPTIONS.map((option) => (
                   <option key={option} value={option}>
@@ -241,6 +337,8 @@ export default function ContactForm({
             type="text"
             autoComplete="name"
             className={inputClass}
+            value={values.nom}
+            onChange={set("nom")}
             aria-invalid={Boolean(errors.nom)}
           />
           <FieldError message={errors.nom} />
@@ -255,6 +353,8 @@ export default function ContactForm({
             type="tel"
             autoComplete="tel"
             className={inputClass}
+            value={values.telephone}
+            onChange={set("telephone")}
           />
         </div>
       </div>
@@ -267,6 +367,8 @@ export default function ContactForm({
           type="email"
           autoComplete="email"
           className={inputClass}
+          value={values.email}
+          onChange={set("email")}
           aria-invalid={Boolean(errors.email)}
         />
         <FieldError message={errors.email} />
@@ -284,6 +386,8 @@ export default function ContactForm({
               ? "Où ça coince aujourd'hui, ce que vous aimeriez pouvoir faire, et pour quand."
               : "Ce que vous faites, ce que vous attendez du site, et pour quand."
           }
+          value={values.message}
+          onChange={set("message")}
           aria-invalid={Boolean(errors.message)}
         />
         <FieldError message={errors.message} />
@@ -296,6 +400,9 @@ export default function ContactForm({
             type="checkbox"
             name="consentement"
             className="mt-1 h-5 w-5 flex-shrink-0 accent-blue-600"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            aria-invalid={Boolean(errors.consentement)}
           />
           <span>
             J&apos;accepte que ces informations soient utilisées pour me
@@ -309,7 +416,6 @@ export default function ContactForm({
 
       {state.status === "error" && state.message && (
         <div
-          ref={errorRef}
           role="alert"
           className="rounded-xl border-2 border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700"
         >
