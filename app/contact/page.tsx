@@ -22,7 +22,7 @@ export default async function ContactPage({
 
   return (
     <>
-      <div className="min-h-screen bg-slate-50 px-4 pt-32 pb-20">
+      <div className="min-h-svh bg-slate-50 px-4 pt-32 pb-20">
         <div className="mx-auto max-w-2xl">
           <div className="mb-10 text-center">
             <div className="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-600">
