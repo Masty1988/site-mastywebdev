@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-white pt-32 px-6 pb-20">
+    <div className="min-h-svh bg-white pt-32 px-6 pb-20">
       <div className="max-w-4xl mx-auto">
         
         {/* En-tête de page */}

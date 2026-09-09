@@ -45,7 +45,7 @@ const included = [
 
 export default function ArtisansPage() {
   return (
-    <div className="min-h-screen bg-white pb-24 md:pb-0">
+    <div className="min-h-svh bg-white pb-24 md:pb-0">
       {/* ---------- HERO ---------- */}
       <section className="bg-slate-50 border-b border-slate-100 px-6 pt-28 pb-14 md:pt-32 md:pb-20">
         <div className="max-w-4xl mx-auto text-center">

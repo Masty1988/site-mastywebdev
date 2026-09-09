@@ -36,7 +36,7 @@ export default function ServicesContent() {
   ];
   
   return (
-    <div className="min-h-screen bg-white pt-32 px-6 pb-20">
+    <div className="min-h-svh bg-white pt-32 px-6 pb-20">
       <div className="max-w-5xl mx-auto text-center mb-16">
         <h1 className="text-4xl font-extrabold text-slate-900 mb-6">
           Votre temps est précieux !

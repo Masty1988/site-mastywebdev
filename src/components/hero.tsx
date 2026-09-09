@@ -22,7 +22,7 @@ const segments = [
 
 export default function Hero() {
   return (
-    <section className="flex min-h-screen flex-col items-center justify-center px-4 pt-28 pb-16">
+    <section className="flex min-h-svh flex-col items-center justify-center px-4 pt-28 pb-16">
       <div className="w-full max-w-5xl space-y-10 text-center">
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight">

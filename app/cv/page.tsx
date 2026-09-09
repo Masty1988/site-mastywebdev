@@ -96,7 +96,7 @@ const skillsTech = [
 
 export default function CvPage() {
   return (
-    <div className="min-h-screen bg-white pt-32 px-6 pb-20">
+    <div className="min-h-svh bg-white pt-32 px-6 pb-20">
       <div className="max-w-4xl mx-auto">
         {/* En-tête */}
         <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 items-center mb-16">
