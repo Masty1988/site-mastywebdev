@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import {
@@ -69,10 +70,30 @@ const services = [
 ];
 
 const realisations = [
-  { titre: "Réfection complète en tuile", lieu: "Surgères", photo: "Toiture terminée, vue d'ensemble depuis la rue" },
-  { titre: "Toiture ardoise rénovée", lieu: "La Rochelle", photo: "Avant / après sur une maison de bourg" },
-  { titre: "Zinguerie et gouttières neuves", lieu: "Aytré", photo: "Détail d'une gouttière zinc posée" },
-  { titre: "Démoussage et hydrofuge", lieu: "Rochefort", photo: "Toiture avant et après nettoyage" },
+  {
+    titre: "Réfection complète en tuile",
+    lieu: "Surgères",
+    src: "/demo/couvreur/chantier-1.jpg",
+    alt: "Toiture en tuile canal refaite à neuf sur une maison en pierre, avec gouttière zinc",
+  },
+  {
+    titre: "Toiture ardoise rénovée",
+    lieu: "La Rochelle",
+    src: "/demo/couvreur/chantier-2.jpg",
+    alt: "Toitures en ardoise et lucarnes rénovées sur des maisons de bourg",
+  },
+  {
+    titre: "Zinguerie et gouttières neuves",
+    lieu: "Aytré",
+    src: "/demo/couvreur/chantier-3.jpg",
+    alt: "Couverture zinc à joint debout avec naissance de gouttière et descente neuves",
+  },
+  {
+    titre: "Démoussage et hydrofuge",
+    lieu: "Rochefort",
+    src: "/demo/couvreur/chantier-4.jpg",
+    alt: "Tuiles mécaniques propres et uniformes après démoussage et traitement hydrofuge",
+  },
 ];
 
 const garanties = [
@@ -183,9 +204,14 @@ export default function DemoCouvreurPage() {
               </a>
             </div>
           </div>
-          <PhotoSlot
-            legende="Photo principale : une toiture terminée, prise de loin, ciel dégagé — c'est l'image qui vend"
-            className="aspect-[4/3] rounded-2xl border-slate-700 bg-slate-800"
+          <Image
+            src="/demo/couvreur/hero.jpg"
+            alt="Toiture en tuile orange refaite à neuf sur une maison blanche, sous un ciel dégagé"
+            width={1600}
+            height={1200}
+            sizes="(min-width: 768px) 50vw, 100vw"
+            priority
+            className="h-auto w-full rounded-2xl object-cover"
           />
         </div>
       </section>
@@ -256,7 +282,14 @@ export default function DemoCouvreurPage() {
           <div className="grid gap-6 sm:grid-cols-2">
             {realisations.map((r) => (
               <div key={r.titre} className="overflow-hidden rounded-xl border border-slate-200 bg-white">
-                <PhotoSlot legende={r.photo} className="aspect-[16/10] border-0 border-b border-slate-200" />
+                <Image
+                  src={r.src}
+                  alt={r.alt}
+                  width={1200}
+                  height={750}
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                  className="aspect-[16/10] w-full border-b border-slate-200 object-cover"
+                />
                 <div className="flex items-center justify-between gap-4 p-5">
                   <div>
                     <h3 className="font-bold text-slate-900">{r.titre}</h3>
