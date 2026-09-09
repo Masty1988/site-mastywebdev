@@ -8,7 +8,6 @@ import {
   Droplets,
   Hammer,
   Home,
-  Image as ImageIcon,
   Leaf,
   MapPin,
   Phone,
@@ -113,24 +112,6 @@ const avis = [
   { nom: "Damien L.", lieu: "Aytré", texte: "Fuite repérée un dimanche, ils sont passés bâcher le lundi matin. Réparation propre la semaine suivante." },
   { nom: "Christine et Marc P.", lieu: "Périgny", texte: "Toiture entièrement refaite. Le résultat est superbe et le prix annoncé a été respecté au centime." },
 ];
-
-/** Emplacement photo : dimensionne et legende pour guider le remplacement. */
-function PhotoSlot({
-  legende,
-  className = "",
-}: {
-  legende: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`flex flex-col items-center justify-center gap-2 border-2 border-dashed border-slate-300 bg-slate-100 p-6 text-center ${className}`}
-    >
-      <ImageIcon className="h-8 w-8 text-slate-400" strokeWidth={1.5} aria-hidden="true" />
-      <p className="text-xs text-slate-500">{legende}</p>
-    </div>
-  );
-}
 
 export default function DemoCouvreurPage() {
   return (
@@ -380,9 +361,13 @@ export default function DemoCouvreurPage() {
               , on se déplace au-delà selon le chantier.
             </p>
           </div>
-          <PhotoSlot
-            legende="Carte de la zone d'intervention, ou photo d'un chantier reconnaissable localement"
-            className="aspect-square rounded-2xl"
+          <Image
+            src="/demo/couvreur/zone.jpg"
+            alt="Couvreur posant des tuiles sur une charpente en cours de couverture"
+            width={1000}
+            height={1000}
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="h-auto w-full rounded-2xl object-cover"
           />
         </div>
       </section>
