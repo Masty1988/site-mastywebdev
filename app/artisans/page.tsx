@@ -7,7 +7,7 @@ import { Camera, Check, PhoneCall, Search, ThumbsUp } from "lucide-react";
 export const metadata: Metadata = {
   title: "Site internet pour artisans et commerçants",
   description:
-    "Création de site vitrine pour artisans, commerçants et indépendants à Surgères, La Rochelle et en Charente-Maritime. Visible sur Google, clair pour vos clients. À partir de 890 €.",
+    "Création de site vitrine pour artisans et commerçants à Surgères, La Rochelle et en Charente-Maritime. Visible sur Google, clair pour vos clients. Dès 890 €.",
 };
 
 const pains = [

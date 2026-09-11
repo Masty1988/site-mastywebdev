@@ -1,3 +1,16 @@
+import type { Metadata } from "next";
+
+// Page requise par le Google Play Store : elle doit rester joignable, mais
+// elle n'a rien a faire dans les resultats de recherche. Sans metadonnees
+// propres elle heritait du titre et de la description de l'accueil, et
+// concourait donc en doublon sous la marque du site.
+export const metadata: Metadata = {
+  title: "Politique de confidentialité — Brad",
+  description:
+    "Politique de confidentialité de l'application Brad, aide à la détection d'arnaques par SMS. Aucune donnée ne quitte l'appareil.",
+  robots: { index: false, follow: false },
+};
+
 export default function BradPrivacy() {
     return (
       <main className="max-w-2xl mx-auto px-4 py-12">
