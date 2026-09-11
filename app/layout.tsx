@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SiteChrome from "../src/components/SiteChrome";
@@ -17,7 +18,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   // URL de base (indispensable pour les images sociales)
-  metadataBase: new URL('https://www.mastywebdev.fr'),
+  metadataBase: new URL(SITE_URL),
 
   title: {
     default: "Masty Web Dev | Développeur Full Stack Freelance",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Masty Web Dev | Développeur Full Stack",
     description: "Besoin d'un site performant ? Je crée des solutions sur mesure pour votre business.",
-    url: 'https://www.mastywebdev.fr',
+    url: SITE_URL,
     siteName: 'Masty Web Dev',
     locale: 'fr_FR',
     type: 'website',
@@ -71,8 +72,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "ProfessionalService", // Ou "LocalBusiness"
               "name": "Masty Web Dev",
-              "@id": "https://www.mastywebdev.fr",
-              "url": "https://www.mastywebdev.fr",
+              "@id": SITE_URL,
+              "url": SITE_URL,
               "telephone": "+33 6 03 39 90 01", // Ajoute ton tel pro si tu veux qu'il apparaisse (ex: "+33 6 ...")
               "priceRange": "$$",
               "address": {

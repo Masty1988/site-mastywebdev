@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { MessagesSquare, Target, Zap } from "lucide-react";
 import RelatedLinks from "@/components/RelatedLinks";
 
@@ -44,6 +45,18 @@ export default function AboutPage() {
             </p>
             <p>
               Papa de 3 enfants, je connais la valeur du temps. Pas de superflu, juste du solide.
+            </p>
+            {/* /cv n'etait reliee depuis nulle part : une page indexable
+                qu'aucun lien ne pointe reste un signal faible. */}
+            <p>
+              Envie du détail ?{" "}
+              <Link
+                href="/cv"
+                className="font-semibold text-blue-600 underline underline-offset-4 hover:text-blue-700"
+              >
+                Mon parcours complet est ici
+              </Link>
+              .
             </p>
           </div>
         </div>

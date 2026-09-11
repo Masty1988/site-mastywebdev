@@ -1,34 +1,23 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
+
+// Uniquement les pages indexables. /demo/artisan et /brad/privacy portent un
+// noindex : les lister ici enverrait un signal contradictoire.
+const routes = [
+  "",
+  "/artisans",
+  "/associations",
+  "/services",
+  "/projects",
+  "/apropos",
+  "/cv",
+  "/contact",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://mastywebdev.fr',
-      lastModified: new Date(),
-    },
-    {
-      url: 'https://mastywebdev.fr/artisans',
-      lastModified: new Date(),
-    },
-    {
-      url: 'https://mastywebdev.fr/associations',
-      lastModified: new Date(),
-    },
-    {
-      url: 'https://mastywebdev.fr/services',
-      lastModified: new Date(),
-    },
-    {
-      url: 'https://mastywebdev.fr/projects',
-      lastModified: new Date(),
-    },
-    {
-      url: 'https://mastywebdev.fr/apropos',
-      lastModified: new Date(),
-    },
-    {
-      url: 'https://mastywebdev.fr/contact',
-      lastModified: new Date(),
-    },
-  ]
+  const lastModified = new Date();
+  return routes.map((route) => ({
+    url: `${SITE_URL}${route}`,
+    lastModified,
+  }));
 }

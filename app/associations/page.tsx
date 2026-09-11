@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Site & inscriptions en ligne pour clubs sportifs",
   description:
-    "Site internet et plateforme d'inscription pour clubs de boxe, MMA, sports de combat, plongée et associations sportives : certificat médical bloquant à l'inscription, règlement signé en ligne, suivi des adhérents. À partir de 890 €.",
+    "Site et inscriptions en ligne pour clubs de boxe, MMA, rugby ou plongée : certificat médical bloquant, règlement signé, suivi des adhérents. Dès 890 €.",
 };
 
 const pains = [
