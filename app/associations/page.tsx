@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Site & inscriptions en ligne pour clubs sportifs",
   description:
-    "Site et inscriptions en ligne pour clubs de boxe, MMA, rugby ou plongée : certificat médical bloquant, règlement signé, suivi des adhérents. Dès 890 €.",
+    "Site et inscriptions en ligne pour clubs de boxe, MMA, rugby ou plongée : certificat médical bloquant, règlement accepté et horodaté, suivi des adhérents. Dès 890 €.",
 };
 
 const pains = [
@@ -60,8 +60,8 @@ const steps = [
   },
   {
     number: "3",
-    title: "Il signe le règlement intérieur",
-    text: "Signature électronique horodatée, avec conservation de l'adresse IP. Vous avez une trace, datée, pour chaque adhérent.",
+    title: "Il accepte le règlement intérieur",
+    text: "Il le lit à l'écran et l'accepte explicitement. La date, l'heure et l'adresse IP de cette acceptation sont enregistrées et archivées dans sa fiche d'inscription. Vous avez une trace, datée, pour chaque adhérent.",
   },
   {
     number: "4",
@@ -79,7 +79,7 @@ const vitrineFeatures = [
 const plateformeFeatures = [
   "Formulaire d'inscription en ligne",
   "Documents obligatoires au choix du club",
-  "Signature électronique du règlement intérieur",
+  "Acceptation du règlement intérieur horodatée et tracée (date, heure, adresse IP)",
   "Tableau de bord des adhérents et de leurs dossiers",
   "Plusieurs accès (président, secrétaire, trésorier…)",
   "Suivi des paiements validés par l'administrateur",
@@ -146,10 +146,13 @@ export default function AssociationsPage() {
 
       {/* ---------- LA NICHE : les disciplines ou le certificat est obligatoire ---------- */}
       {/*
-        TODO Nicolas : verifie la liste exacte des "disciplines a contraintes
-        particulieres" (Code du sport) avant de mettre en ligne. Je reste
-        volontairement general ici — ne transforme pas cette section en
-        affirmation juridique sans l'avoir controlee.
+        Liste verifiee sur Legifrance (article D231-1-5 du code du sport, version
+        en vigueur au 12/09/2026). Deux points a ne pas perdre en reecrivant :
+        - le rugby n'y figure PAS ; son obligation vient du reglement de la FFR ;
+        - le 2° (mise hors combat autorisee) ne vise que la COMPETITION, donc un
+          licencie loisir majeur n'est pas couvert par cet article.
+        D'ou la formulation ci-dessous, qui cite les deux sources d'obligation
+        au lieu d'en affirmer une seule.
       */}
       <section className="px-6 py-10 md:py-16">
         <div className="max-w-4xl mx-auto p-10 rounded-2xl bg-blue-50 border-2 border-blue-100">
@@ -157,9 +160,10 @@ export default function AssociationsPage() {
             Pensé d&apos;abord pour les disciplines à risque
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-4">
-            Boxe, MMA, sports de combat, rugby, plongée. Là où le certificat
-            médical est exigé et où un dossier incomplet engage la
-            responsabilité du club, bloquer l&apos;inscription tant que le
+            Boxe, MMA, sports de combat, rugby, plongée. Là où un certificat
+            médical est exigé — par le code du sport pour la compétition, par
+            votre fédération pour le reste — et où un dossier incomplet engage
+            la responsabilité du club, bloquer l&apos;inscription tant que le
             document manque n&apos;est pas un confort : c&apos;est une
             protection. Pour vous, et pour vos adhérents.
           </p>
@@ -283,7 +287,7 @@ export default function AssociationsPage() {
                 {[
                   "Inscriptions ouvertes en ligne",
                   "Dossiers reçus complets",
-                  "Règlement intérieur signé et horodaté",
+                  "Règlement intérieur accepté, horodaté et tracé",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-gray-700">
                     <Check
@@ -433,7 +437,7 @@ export default function AssociationsPage() {
       <RelatedLinks currentPage="associations" />
 
       <StickyCta
-        price="890 €"
+        price="1 490 €"
         label="Parler de mon club"
         href="/contact?type=association"
       />
