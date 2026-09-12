@@ -146,10 +146,13 @@ export default function AssociationsPage() {
 
       {/* ---------- LA NICHE : les disciplines ou le certificat est obligatoire ---------- */}
       {/*
-        TODO Nicolas : verifie la liste exacte des "disciplines a contraintes
-        particulieres" (Code du sport) avant de mettre en ligne. Je reste
-        volontairement general ici — ne transforme pas cette section en
-        affirmation juridique sans l'avoir controlee.
+        Liste verifiee sur Legifrance (article D231-1-5 du code du sport, version
+        en vigueur au 12/09/2026). Deux points a ne pas perdre en reecrivant :
+        - le rugby n'y figure PAS ; son obligation vient du reglement de la FFR ;
+        - le 2° (mise hors combat autorisee) ne vise que la COMPETITION, donc un
+          licencie loisir majeur n'est pas couvert par cet article.
+        D'ou la formulation ci-dessous, qui cite les deux sources d'obligation
+        au lieu d'en affirmer une seule.
       */}
       <section className="px-6 py-10 md:py-16">
         <div className="max-w-4xl mx-auto p-10 rounded-2xl bg-blue-50 border-2 border-blue-100">
@@ -157,9 +160,10 @@ export default function AssociationsPage() {
             Pensé d&apos;abord pour les disciplines à risque
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-4">
-            Boxe, MMA, sports de combat, rugby, plongée. Là où le certificat
-            médical est exigé et où un dossier incomplet engage la
-            responsabilité du club, bloquer l&apos;inscription tant que le
+            Boxe, MMA, sports de combat, rugby, plongée. Là où un certificat
+            médical est exigé — par le code du sport pour la compétition, par
+            votre fédération pour le reste — et où un dossier incomplet engage
+            la responsabilité du club, bloquer l&apos;inscription tant que le
             document manque n&apos;est pas un confort : c&apos;est une
             protection. Pour vous, et pour vos adhérents.
           </p>
