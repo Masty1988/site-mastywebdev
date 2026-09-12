@@ -34,7 +34,7 @@ const pains = [
 ];
 
 const included = [
-  "Site vitrine — 4 pages",
+  "Site vitrine, 4 pages",
   "Vos coordonnées et vos horaires bien visibles",
   "Formulaire de contact qui arrive dans votre boîte mail",
   "Galerie de vos réalisations",
@@ -169,7 +169,7 @@ export default function ArtisansPage() {
               <p className="text-xl font-bold text-slate-900">
                 144 € par an
                 <span className="block text-sm font-normal text-gray-500">
-                  soit 12 €/mois — une seule facture, première année incluse
+                  soit 12 €/mois, une seule facture. Première année incluse.
                 </span>
               </p>
             </div>

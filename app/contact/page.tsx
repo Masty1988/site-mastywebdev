@@ -81,7 +81,7 @@ export default async function ContactPage({
                 <span className="block font-semibold text-slate-900">
                   Localisation
                 </span>
-                Surgères (17700) — La Rochelle et Charente-Maritime
+                Surgères (17700), La Rochelle et Charente-Maritime
               </div>
             </div>
           </div>

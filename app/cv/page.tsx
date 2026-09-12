@@ -60,7 +60,7 @@ const formations = [
   },
   {
     year: "2013",
-    title: "Formation Vendeur Magasin — Tech Up",
+    title: "Formation Vendeur Magasin, Tech Up",
     org: "Descours et Cabaud",
   },
 ];

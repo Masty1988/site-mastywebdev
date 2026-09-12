@@ -161,15 +161,15 @@ export default function AssociationsPage() {
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-4">
             Boxe, MMA, sports de combat, rugby, plongée. Là où un certificat
-            médical est exigé — par le code du sport pour la compétition, par
-            votre fédération pour le reste — et où un dossier incomplet engage
+            médical est exigé, par le code du sport pour la compétition et par
+            votre fédération pour le reste, et où un dossier incomplet engage
             la responsabilité du club, bloquer l&apos;inscription tant que le
             document manque n&apos;est pas un confort : c&apos;est une
             protection. Pour vous, et pour vos adhérents.
           </p>
           <p className="text-gray-600">
             Votre discipline n&apos;impose pas de certificat ? Vous choisissez
-            librement les documents que vous demandez — ou aucun.
+            librement les documents que vous demandez, ou aucun.
           </p>
         </div>
       </section>
@@ -363,7 +363,7 @@ export default function AssociationsPage() {
               <p className="text-xl font-bold text-slate-900">
                 390 € la saison
                 <span className="block text-sm font-normal text-gray-500">
-                  soit 39 €/mois — réglé en une fois, première année incluse
+                  soit 39 €/mois, réglé en une fois. Première année incluse.
                 </span>
               </p>
             </div>

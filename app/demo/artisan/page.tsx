@@ -29,7 +29,7 @@ import {
  */
 
 export const metadata: Metadata = {
-  title: "Démonstration — site de couvreur",
+  title: "Démonstration | site de couvreur",
   description:
     "Exemple de site vitrine réalisé pour un artisan couvreur : services, réalisations, zone d'intervention et demande de devis.",
   robots: { index: false, follow: false },
@@ -118,7 +118,7 @@ export default function DemoCouvreurPage() {
     <div className="bg-white">
       {/* ---------- Bandeau de demonstration : ne pas retirer ---------- */}
       <div className="bg-slate-900 px-4 py-2 text-center text-xs text-slate-300">
-        Site de démonstration — entreprise fictive.{" "}
+        Site de démonstration, entreprise fictive.{" "}
         <Link href="/artisans" className="font-semibold text-white underline underline-offset-2">
           Voir mes offres pour les artisans
         </Link>
@@ -324,7 +324,7 @@ export default function DemoCouvreurPage() {
                   « {a.texte} »
                 </blockquote>
                 <figcaption className="text-sm font-semibold text-slate-400">
-                  {a.nom} — {a.lieu}
+                  {a.nom}, {a.lieu}
                 </figcaption>
               </figure>
             ))}
@@ -382,7 +382,7 @@ export default function DemoCouvreurPage() {
             </h2>
             <p className="mb-8 text-lg leading-relaxed text-orange-50">
               On se déplace, on monte sur le toit, on regarde vraiment. Vous
-              recevez un chiffrage détaillé sous 48 heures — pas une fourchette
+              recevez un chiffrage détaillé sous 48 heures, pas une fourchette
               donnée au téléphone.
             </p>
             <a
@@ -437,7 +437,7 @@ export default function DemoCouvreurPage() {
                 Envoyer ma demande
               </button>
               <p className="text-center text-xs text-slate-400">
-                Formulaire inactif — démonstration
+                Formulaire inactif (démonstration)
               </p>
             </div>
           </div>
@@ -486,7 +486,7 @@ export default function DemoCouvreurPage() {
           </div>
           <div className="border-t border-slate-800 pt-6 text-center text-xs">
             <p className="mb-2">
-              Site de démonstration — entreprise, coordonnées et avis fictifs.
+              Site de démonstration. Entreprise, coordonnées et avis fictifs.
             </p>
             <p>
               Réalisé par{" "}
