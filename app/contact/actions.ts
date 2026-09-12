@@ -19,7 +19,7 @@ function subject(data: ContactPayload): string {
       : data.segment === "artisan"
         ? data.metier
         : data.nom;
-  return `[${SEGMENT_LABELS[data.segment]}] ${who} — nouvelle demande`;
+  return `[${SEGMENT_LABELS[data.segment]}] Nouvelle demande de ${who}`;
 }
 
 function body(data: ContactPayload): string {

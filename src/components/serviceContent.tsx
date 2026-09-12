@@ -11,7 +11,7 @@ export default function ServicesContent() {
     {
       title: "Votre vitrine accessible partout !",
       Icon: Sparkles,
-      problem: `Votre activité vous prend déjà assez de temps, et tout repose sur vous. Sans site web, vous devez répéter les mêmes informations, présenter vos services à la main et gérer chaque demande individuellement. Et pendant que vous faites tout ça, vos futurs clients — ceux qui ne vous connaissent pas encore — cherchent en ligne… et ne vous trouvent pas.`,
+      problem: `Votre activité vous prend déjà assez de temps, et tout repose sur vous. Sans site web, vous devez répéter les mêmes informations, présenter vos services à la main et gérer chaque demande individuellement. Et pendant que vous faites tout ça, vos futurs clients, ceux qui ne vous connaissent pas encore, cherchent en ligne… et ne vous trouvent pas.`,
       solution: `Avec une vraie vitrine en ligne, tout devient plus simple. Vos informations sont accessibles 24h/24, votre activité est claire dès la première seconde et vous gagnez en crédibilité sans effort. Votre site prend en charge une partie des tâches répétitives et vous êtes enfin présent là où vos prochains clients vous attendent.`,
       features: ["Site vitrine", "Formulaire de contact", "Acces 24h24"]
     },
