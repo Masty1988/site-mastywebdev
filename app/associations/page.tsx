@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Site & inscriptions en ligne pour clubs sportifs",
   description:
-    "Site et inscriptions en ligne pour clubs de boxe, MMA, rugby ou plongée : certificat médical bloquant, règlement signé, suivi des adhérents. Dès 890 €.",
+    "Site et inscriptions en ligne pour clubs de boxe, MMA, rugby ou plongée : certificat médical bloquant, règlement accepté et horodaté, suivi des adhérents. Dès 890 €.",
 };
 
 const pains = [
@@ -60,8 +60,8 @@ const steps = [
   },
   {
     number: "3",
-    title: "Il signe le règlement intérieur",
-    text: "Signature électronique horodatée, avec conservation de l'adresse IP. Vous avez une trace, datée, pour chaque adhérent.",
+    title: "Il accepte le règlement intérieur",
+    text: "Il le lit à l'écran et l'accepte explicitement. La date, l'heure et l'adresse IP de cette acceptation sont enregistrées et archivées dans sa fiche d'inscription. Vous avez une trace, datée, pour chaque adhérent.",
   },
   {
     number: "4",
@@ -79,7 +79,7 @@ const vitrineFeatures = [
 const plateformeFeatures = [
   "Formulaire d'inscription en ligne",
   "Documents obligatoires au choix du club",
-  "Signature électronique du règlement intérieur",
+  "Acceptation du règlement intérieur horodatée et tracée (date, heure, adresse IP)",
   "Tableau de bord des adhérents et de leurs dossiers",
   "Plusieurs accès (président, secrétaire, trésorier…)",
   "Suivi des paiements validés par l'administrateur",
@@ -283,7 +283,7 @@ export default function AssociationsPage() {
                 {[
                   "Inscriptions ouvertes en ligne",
                   "Dossiers reçus complets",
-                  "Règlement intérieur signé et horodaté",
+                  "Règlement intérieur accepté, horodaté et tracé",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-gray-700">
                     <Check
@@ -433,7 +433,7 @@ export default function AssociationsPage() {
       <RelatedLinks currentPage="associations" />
 
       <StickyCta
-        price="890 €"
+        price="1 490 €"
         label="Parler de mon club"
         href="/contact?type=association"
       />
