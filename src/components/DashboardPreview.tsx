@@ -143,7 +143,7 @@ export default function DashboardPreview() {
       </div>
 
       <figcaption className="mt-3 text-center text-xs text-slate-400">
-        Aperçu du tableau de bord — adhérents fictifs.
+        Aperçu du tableau de bord, adhérents fictifs.
       </figcaption>
     </figure>
   );

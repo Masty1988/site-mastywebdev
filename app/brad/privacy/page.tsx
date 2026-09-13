@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 // propres elle heritait du titre et de la description de l'accueil, et
 // concourait donc en doublon sous la marque du site.
 export const metadata: Metadata = {
-  title: "Politique de confidentialité — Brad",
+  title: "Politique de confidentialité | Brad",
   description:
     "Politique de confidentialité de l'application Brad, aide à la détection d'arnaques par SMS. Aucune donnée ne quitte l'appareil.",
   robots: { index: false, follow: false },

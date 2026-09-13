@@ -44,7 +44,7 @@ export default function ExperienceCard({ period, title, org, items }: Experience
 
         {/* Face arrière */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-2xl border border-blue-100 bg-slate-900 p-6 flex flex-col overflow-y-auto">
-          <p className="text-xs font-semibold text-blue-400 mb-1">{org} — {period}</p>
+          <p className="text-xs font-semibold text-blue-400 mb-1">{org} · {period}</p>
           {items.length > 0 ? (
             <ul className="space-y-1.5 text-sm text-slate-200 list-disc list-inside">
               {items.map((item) => (
