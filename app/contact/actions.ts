@@ -48,13 +48,30 @@ function body(data: ContactPayload): string {
   return lines.join("\n");
 }
 
+// En dessous, personne ne lit, ne remplit et ne coche le formulaire.
+const MIN_FILL_MS = 3000;
+
+function looksLikeBot(formData: FormData): boolean {
+  // Honeypot : un humain ne remplit jamais un champ qu'il ne voit pas.
+  const fax = formData.get("fax");
+  if (typeof fax === "string" && fax.trim() !== "") return true;
+
+  // Duree de remplissage, mesuree par le navigateur. Absente (envoi sans
+  // JavaScript ou requete forgee) ou trop courte : robot.
+  const elapsed = Number(formData.get("elapsed"));
+  if (!Number.isFinite(elapsed) || elapsed < MIN_FILL_MS) return true;
+
+  return false;
+}
+
 export async function sendContact(
   _prev: ContactState,
   formData: FormData,
 ): Promise<ContactState> {
-  // Piege a robots : un humain ne remplit jamais un champ qu'il ne voit pas.
-  // On repond "envoye" pour ne pas renseigner le spammeur.
-  if (typeof formData.get("website") === "string" && formData.get("website")) {
+  // Pieges a robots. On repond "envoye" pour ne pas renseigner le spammeur.
+  // Revers : un humain bloque par erreur croit lui aussi que c'est parti,
+  // d'ou un seuil de temps volontairement bas.
+  if (looksLikeBot(formData)) {
     return { status: "success" };
   }
 
