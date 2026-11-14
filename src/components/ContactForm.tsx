@@ -94,6 +94,24 @@ export default function ContactForm({
     INITIAL_STATE,
   );
   const formRef = useRef<HTMLFormElement>(null);
+  // Instant ou le formulaire est apparu a l'ecran. performance.now() mesure
+  // une duree locale, insensible a l'heure (parfois fausse) de l'ordinateur.
+  const shownAt = useRef<number | null>(null);
+  useEffect(() => {
+    shownAt.current = performance.now();
+  }, []);
+
+  // On ajoute la duree de remplissage juste avant l'envoi. Sans JavaScript,
+  // le champ est absent : le serveur le traite comme un robot.
+  const submit = (formData: FormData) => {
+    if (shownAt.current !== null) {
+      formData.set(
+        "elapsed",
+        String(Math.round(performance.now() - shownAt.current)),
+      );
+    }
+    formAction(formData);
+  };
   const errors = state.fieldErrors ?? {};
 
   const set =
@@ -161,14 +179,19 @@ export default function ContactForm({
   return (
     <form
       ref={formRef}
-      action={formAction}
+      action={submit}
       className="space-y-8 text-left"
       noValidate
     >
-      {/* Piege a robots : invisible et hors du parcours clavier. */}
-      <div className="absolute left-[-9999px]" aria-hidden="true">
-        <label htmlFor="website">Ne remplissez pas ce champ</label>
-        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+      {/* Piege a robots : un champ credible, invisible pour un humain et hors
+          du parcours clavier et lecteur d'ecran. Un robot qui le remplit se
+          trahit. */}
+      <div
+        className="pointer-events-none absolute h-0 w-0 overflow-hidden opacity-0"
+        aria-hidden="true"
+      >
+        <label htmlFor="fax">Fax</label>
+        <input id="fax" name="fax" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
       {/* --- Qui vous etes : pilote les champs affiches ensuite --- */}
